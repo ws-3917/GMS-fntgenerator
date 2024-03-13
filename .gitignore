@@ -3,3 +3,5 @@
 *.spec
 
 /releases
+
+/.vscode
