@@ -29,7 +29,7 @@ GMS字库生成器是一个为Gamemaker Studio游戏制作的实用字体导入/
 
 3. **想修复 TS! Underswap 中文字体间距的问题：**
 
-   TS! Underswap 通过 JSON 文件单独指定每个字符的宽度和偏移量。
+   TS! Underswap 通过 JSON 文件单独指定每个字符的宽度和偏移量。 
 
     **第一步，** 将语言配置的 JSON 文件 (游戏目录 `data/default.json` )及字库 `chs.txt` 放置到 `tool_genelangJSON` 小工具的目录下。
 
