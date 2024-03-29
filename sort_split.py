@@ -1,5 +1,5 @@
 # 对字库内汉字进行分行和排序
-fnt_source = "font_info/char_en.txt"
+fnt_source = "font_info/char_cn.txt"
 # 读取文件
 ch_list = []
 with open(fnt_source, "r", encoding="utf-8") as file:
