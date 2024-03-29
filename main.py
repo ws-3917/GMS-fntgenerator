@@ -44,6 +44,7 @@ def task(basicinfo_csv, glyphinfo_json):
     # for 每一行csv的信息：
         # 根据name，shift等整合出一个info字典
         # 在json中读取一条记录，获取该字体下的每一条font, char, size记录，添加到glyphinfo_list
+        # 导入的不同charset需要进行去重（前面的优先级高）
         # glyphinfo的size是生成子图时使用的字体大小，不一定需要和字体基本配置的size一致
         # infodict传入merge_fontinfo用于整合, glyphinfo_list传入merge_fontinfo 用于生成和拼接字图
     pass
