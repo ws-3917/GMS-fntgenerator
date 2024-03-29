@@ -1,9 +1,0 @@
-/build
-
-*.spec
-
-/releases
-
-/.vscode
-
-/dest
