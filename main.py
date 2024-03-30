@@ -63,7 +63,7 @@ class FontGlyph:
         return None
 
     # 绘制单个字体字图
-    def draw_singlefont(self, fontfile, currentchar, size, threshold) -> tuple:
+    def draw_singlefont(self, fontfile, currentchar, size, threshold, pixel) -> tuple:
         # 读取字体，生成 size*4 的字体对象
         # 绘制4倍size的字图
         # 将图片压制到原size大小，邻近像素
@@ -72,10 +72,16 @@ class FontGlyph:
         startpoint, endpoint = (font.getbbox(currentchar)[:2], font.getbbox(currentchar)[2:])
 
         # 初始化完毕，创建子图（二值图）
-        fontimg = Image.new('L', endpoint)
-        # 绘制
-        drawtool = ImageDraw.Draw(fontimg)
-        drawtool.text((0, 0), currentchar, fill=255, font=font)
+        if pixel:
+            fontimg = Image.new('1', endpoint)
+            # 绘制
+            drawtool = ImageDraw.Draw(fontimg)
+            drawtool.text((0, 0), currentchar, fill=1, font=font)
+        else:
+            fontimg = Image.new('L', endpoint)
+            # 绘制
+            drawtool = ImageDraw.Draw(fontimg)
+            drawtool.text((0, 0), currentchar, fill=255, font=font)
 
         # 缩放步骤可以省略，转换为透明图
         fontimg = self.convert_pic(fontimg, threshold)
@@ -101,17 +107,17 @@ class FontGlyph:
         endpoint = fontinfo[1]
         fontimg = fontinfo[2]
         # 如果已经排到末尾，+1 是预留的间距
-        if self.__x + endpoint[0] > self.width:
+        if self.__x + endpoint[0] + self.gappx > self.width:
             # 移动到下一行开头
             self.__x = 0
-            self.__y += self.__line_maxheight
+            self.__y += self.__line_maxheight + self.gappx
             # 重置最大行
             self.__line_maxheight = 0
         
         # 粘贴图片
         self.glyph.paste(fontimg, (self.__x, self.__y))
         # 移动坐标
-        self.__x += endpoint[0] 
+        self.__x += endpoint[0] + self.gappx
         self.__line_maxheight = max(self.__line_maxheight, endpoint[1])
 
     # 写入字体信息到JSON (for Outertale)
@@ -124,18 +130,18 @@ class FontGlyph:
 
         # 构建 outertale 接受的 JSON 数据
         data['area'] = {
-            "x": self.__x - endpoint[0] + startpoint[0],
+            "x": self.__x - endpoint[0] + startpoint[0] - self.gappx,
             #"y": self.__y + startpoint[1],
             # 高度修正
             "y": self.__y,
-            "width": endpoint[0] - startpoint[0],
-            "height": endpoint[1]
+            "width": endpoint[0] + self.gappx,
+            "height": endpoint[1] + self.gappx
         }
         data['code'] = str(ord(currentchar))
         data['margin'] = endpoint[0] - startpoint[0]
         data['metrics'] = {
-            "height": endpoint[1],
-            "width": endpoint[0],
+            "height": endpoint[1] + self.gappx,
+            "width": endpoint[0] + self.gappx,
             "x": 0,
             "y": 0
         }
@@ -156,6 +162,11 @@ class FontGlyph:
             charset = cfg['char']
             size = cfg['size']
             threshold = cfg['threshold'] if 'threshold' in cfg else 0
+            # 修正：添加像素字体选项
+            pixel = cfg['pixel'] if 'pixel' in cfg else False
+            
+            # 修正：添加 gappx，字体间距变量，可分字体调节
+            self.gappx = cfg['gappx'] if 'gappx' in cfg else 2
 
             # 对于字库中的每个字符：不断读取并发送给绘制程序
             with open(charset, "r", encoding="UTF-8") as file:
@@ -168,7 +179,7 @@ class FontGlyph:
                     if ch == '\n':   # 跳过换行符
                         continue
                     # 首先，绘制字图
-                    fontinfo = self.draw_singlefont(fontfile, ch, size, threshold)
+                    fontinfo = self.draw_singlefont(fontfile, ch, size, threshold, pixel)
                     # 随后，添加到主字图中
                     self.add_fontimg(fontinfo)
                     # 接着，更新JSON文件或CSV文件

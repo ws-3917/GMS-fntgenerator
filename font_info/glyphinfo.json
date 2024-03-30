@@ -5,7 +5,8 @@
             {
                 "font": "fnt_en/comicsans-px.ttf",
                 "char": "font_info/char_en.txt",
-                "size": 16
+                "size": 16,
+                "gappx": 1
             },
             {
                 "font": "fnt_zh-cn/fzsejt.ttf",
@@ -21,7 +22,8 @@
             {
                 "font": "fnt_en/crypt.ttf",
                 "char": "font_info/char_en.txt",
-                "size": 5
+                "size": 5,
+                "gappx": 1
             }
         ]
     },
@@ -31,12 +33,14 @@
             {
                 "font": "fnt_en/8bitoperator.ttf",
                 "char": "font_info/char_en.txt",
-                "size": 16
+                "size": 16,
+                "gappx": 1
             },
             {
-                "font": "fnt_zh-cn/unifont.otf",
+                "font": "fnt_zh-cn/fzxs12.ttf",
                 "char": "font_info/char_cn.txt",
-                "size": 16
+                "size": 12,
+                "pixel": true
             }
         ]
     },
@@ -46,12 +50,14 @@
             {
                 "font": "fnt_en/8bitoperator.ttf",
                 "char": "font_info/char_en.txt",
-                "size": 16
+                "size": 16,
+                "gappx": 1
             },
             {
-                "font": "fnt_zh-cn/unifont.otf",
+                "font": "fnt_zh-cn/fzxs12.ttf",
                 "char": "font_info/char_cn.txt",
-                "size": 16
+                "size": 12,
+                "pixel": true
             }
         ]
     },
@@ -61,7 +67,8 @@
             {
                 "font": "fnt_en/DiaryOfAn8BitMage.otf",
                 "char": "font_info/char_en.txt",
-                "size": 18
+                "size": 18,
+                "gappx": 1
             },
             {
                 "font": "fnt_zh-cn/unifont.otf",
@@ -76,12 +83,14 @@
             {
                 "font": "fnt_en/dotumche-px.ttf",
                 "char": "font_info/char_en.txt",
-                "size": 13
+                "size": 13,
+                "gappx": 6
             },
             {
                 "font": "fnt_zh-cn/fzxs14.ttf",
                 "char": "font_info/char_cn.txt",
-                "size": 14
+                "size": 14,
+                "gappx": 6
             }
         ]
     },
