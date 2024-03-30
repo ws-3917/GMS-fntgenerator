@@ -7,7 +7,7 @@ with open(fnt_source, "r", encoding="utf-8") as file:
     file.seek(0)
     for i in range(content_len):
         ch = file.read(1)
-        if ch == '\n' or ch == ' ':
+        if ch == '\n':
             continue
         # 将文件一次性读入内存
         ch_list.append(ch)

@@ -10,7 +10,8 @@
             {
                 "font": "fnt_zh-cn/fzsejt.ttf",
                 "char": "font_info/char_cn.txt",
-                "size": 16
+                "size": 17,
+                "threshold": 200
             }
         ]
     },
@@ -75,7 +76,7 @@
             {
                 "font": "fnt_en/dotumche-px.ttf",
                 "char": "font_info/char_en.txt",
-                "size": 14
+                "size": 13
             },
             {
                 "font": "fnt_zh-cn/fzxs14.ttf",
@@ -105,7 +106,8 @@
             {
                 "font": "fnt_zh-cn/fzktjt.ttf",
                 "char": "font_info/char_cn.txt",
-                "size": 16
+                "size": 20,
+                "threshold": 200
             }
         ]
     }
