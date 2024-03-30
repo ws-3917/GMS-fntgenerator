@@ -1,5 +1,10 @@
 # 字图配置生成
 
+class FontGlyph:
+    # 初始化
+    def __init__(self, ) -> None:
+        pass
+
 # 模块1：生成每个字体图
 def single_font(fontfile, currentchar, size):
     # 读取字体，生成 size*4 的字体对象
