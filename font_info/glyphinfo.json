@@ -21,7 +21,7 @@
             {
                 "font": "fnt_en/crypt.ttf",
                 "char": "font_info/char_en.txt",
-                "size": 8
+                "size": 5
             }
         ]
     },
@@ -61,12 +61,12 @@
             {
                 "font": "fnt_en/DiaryOfAn8BitMage.otf",
                 "char": "font_info/char_en.txt",
-                "size": 20
+                "size": 18
             },
             {
-                "font": "fnt_zh-cn/fzxs12-Pixel.ttf",
+                "font": "fnt_zh-cn/unifont.otf",
                 "char": "font_info/char_cn.txt",
-                "size": 20
+                "size": 16
             }
         ]
     },
@@ -107,7 +107,7 @@
                 "font": "fnt_zh-cn/fzktjt.ttf",
                 "char": "font_info/char_cn.txt",
                 "size": 20,
-                "threshold": 200
+                "threshold": 190
             }
         ]
     }

@@ -125,15 +125,17 @@ class FontGlyph:
         # 构建 outertale 接受的 JSON 数据
         data['area'] = {
             "x": self.__x - endpoint[0] + startpoint[0],
-            "y": self.__y + startpoint[1],
+            #"y": self.__y + startpoint[1],
+            # 高度修正
+            "y": self.__y,
             "width": endpoint[0] - startpoint[0],
-            "height": endpoint[1] - startpoint[1]
+            "height": endpoint[1]
         }
         data['code'] = str(ord(currentchar))
         data['margin'] = endpoint[0] - startpoint[0]
         data['metrics'] = {
             "height": endpoint[1],
-            "width": endpoint[1],
+            "width": endpoint[0],
             "x": 0,
             "y": 0
         }
