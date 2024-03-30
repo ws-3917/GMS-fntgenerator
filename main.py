@@ -1,18 +1,122 @@
 # 字图配置生成
+import csv, json
+from PIL import Image, ImageFont, ImageDraw
+import numpy as np
 
+# 定义字图类
 class FontGlyph:
     # 初始化
-    def __init__(self, ) -> None:
+    width = height = 4096   # 大小
+
+    def __init__(self, name, basicinfo_csv, glyphinfo_json) -> None:
+        # 当前绘制的x,y位置
+        self.__x = 0
+        self.__y = 0
+        self.__line_maxheight = 0   # 当前行字体的最大高度，用于换行
+        self.__name = name
+        self.__basicinfo = basicinfo_csv
+        self.__glyphinfo = glyphinfo_json
+
+        # 主字图
+        self.glyph = Image.fromarray(np.zeros((self.width, self.height, 2), np.uint8))
+
+        # 主JSON，csv
+        self.jsonfile = self.init_json()
+        self.csv = list()
+
+    # 初始化基本信息并写入json
+    def init_json(self) -> dict:
+        csv_reader = csv.reader(open(self.__basicinfo))
+
+        infoline = True
+        for row in csv_reader:
+            if infoline:
+                infoline = False
+                keys = row
+                continue
+            
+            # 选择数据
+            if row['name'] == self.__name:
+                data = dict(zip(keys, row))
+                break
+
+        # 对于 Outertale 的特殊处理
+        data['shift'] = {"x": data['shift_x'], "y": data['shift_y']}
+        data.pop('shift')
+
+        # 准备绘制子图
+        data['glyph'] = []
+
+        return data
+
+    # 绘制单个字体字图
+    def draw_singlefont(self, fontfile, currentchar, size) -> tuple:
+        # 读取字体，生成 size*4 的字体对象
+        # 绘制4倍size的字图
+        # 将图片压制到原size大小，邻近像素
+        # 二值化，返回字图矩阵
+        font = ImageFont.truetype(fontfile, size)
+        startpoint, endpoint = font.getbbox(currentchar)[:2], font.getbbox(currentchar)[2:]
+
+        # 初始化完毕，创建子图（二值图）
+        fontimg = Image.new(1, endpoint)
+        # 绘制
+        drawtool = ImageDraw.Draw(fontimg)
+        drawtool.text((0, 0), currentchar, fill=1)
+
+        # 缩放步骤可以省略，转换为透明图
+        fontimg = self.convert_pic(fontimg)
+        fontinfo = (startpoint, endpoint, fontimg)
+
+        return fontinfo
+
+    # 将生成的二值图透明化，转为含Alpha的灰度图
+    def convert_pic(self, fontimg) -> Image:
+        fontimg_arr = np.asarray(fontimg)
+        new_arr = np.empty((fontimg.shape[0], fontimg.shape[1], 2), np.uint8)
+
+        # 将二值点转为 [255, 255] 或 [0, 0]
+        new_arr[..., 1] = new_arr[..., 0] = fontimg_arr*255
+
+        # 转换回 Image 对象
+        new_fontimg = Image.fromarray(new_arr, "LA")
+        return new_fontimg
+        
+    # 将字体添加到总字图上
+    def add_fontimg(self, fontinfo) -> None:
+        # 主要处理换行和字体偏移量
+        endpoint = fontinfo[1]
+        fontimg = fontinfo[2]
+        # 如果已经排到末尾，+1 是预留的间距
+        if self.__x + endpoint[0] + 1 > self.width:
+            # 移动到下一行开头
+            self.__x = 0
+            self.__y += self.__line_maxheight + 1
+            # 重置最大行
+            self.__line_maxheight = 0
+        
+        # 粘贴图片
+        self.glyph.paste(fontimg, (self.__x, self.__y))
+        # 移动坐标
+        self.__x += endpoint[0] + 1
+        self.__line_maxheight = max(self.__line_maxheight, endpoint[1])
+
+    # 写入字体信息到JSON (for Outertale)
+    def write_fontimg_json(self, fontinfo, currentchar) -> None:
         pass
+
+    # 写入字体信息到csv (for GMS game, e.g. TS!Underswap)
+    def write_fontimg_csv(self, fontinfo):
+        pass
+
+    # 字图制作与导入task
+    def outertale_task(self):
+        pass
+
 
 # 模块1：生成每个字体图
 def single_font(fontfile, currentchar, size):
-    # 读取字体，生成 size*4 的字体对象
-    # 绘制4倍size的字图
-    # 将图片压制到原size大小，邻近像素
-    # 二值化，返回字图矩阵
 
-    # return out_singlefontpng
     pass
 
 
