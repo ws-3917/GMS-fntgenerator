@@ -31,10 +31,10 @@ class FontGlyph:
             with open(cfg["charset"], "r", encoding="UTF-8") as file:
                 charlen = len(file.read())
             # 通过字符总数和字体矩阵宽度计算行数
-            ch_perline = self.pic_width // cfg["blk_width"]
+            ch_perline = self.pic_width // cfg['width']
             linecount = charlen // ch_perline + int(charlen % ch_perline > 0)  # 向上取整
 
-            expectedheight += linecount * cfg['blk_height']
+            expectedheight += linecount * cfg['height']
         
         return expectedheight
 
@@ -93,18 +93,18 @@ class FontGlyph:
             # 4-1 Update: 全面取消 gap 参数
             # 采用矩形拼接的想法：将每种字体的字符放在一个宽度和高度固定的矩形框中
             # 矩形框的宽度和高度可手动指定，如果没有指定，则按照某一字符的endpoint指定
-            # 暂定：M 和 赢（随便选的，比较复杂且常见的字）
             # 指定了矩形框大小后，再指定每一个字体的绘制高度起点（可以是负数）
             font = ImageFont.truetype(cfg['fontfile'], size=cfg['size'])
-            fontsize1 = font.getbbox("M")
-            fontsize2 = font.getbbox('赢')
+            fontselect = ["A", "g", "赢"]
 
-            if not 'blk_width' in cfg:
-                cfg['blk_width'] = max(fontsize1[2], fontsize2[2])
-            if not 'blk_height' in cfg:
-                cfg['blk_height'] = max(fontsize1[3], fontsize2[3])
-            if not "start_height" in cfg:
-                cfg['start_height'] = 0
+            optionalkeys = ['extrawidth', 'extraheight', "start_height", 'start_width']
+            for keyname in optionalkeys:
+                if keyname not in cfg:
+                    cfg[keyname]  = 0
+
+            # 字框大小设置
+            cfg['width'] = max([font.getbbox(ch)[2] for ch in fontselect]) + cfg['extrawidth']
+            cfg['height'] = max([font.getbbox(ch)[3] for ch in fontselect]) + cfg['extraheight']
 
             source[it] = cfg
             
@@ -113,15 +113,34 @@ class FontGlyph:
     # 绘制单个字体字图
     def draw_singlefont(self, currentchar, fontcfg) -> tuple:
         font = ImageFont.truetype(fontcfg['fontfile'], fontcfg['size'])
-        endpoint = (fontcfg['blk_width'], fontcfg['blk_height'])
+
+        startpoint = [fontcfg['start_width'], fontcfg['start_height']]
+        # 在图片上添加字体后写入配置文件
+        fontcfg['drawwidth'] = fontcfg['width']
+        fontcfg['drawheight'] = fontcfg['height']
+        # 此处检测是否有专门指定width, height的字符
+        if "spec_char" in fontcfg:
+            for spec_char in fontcfg['spec_char']:
+                if spec_char['char'] == currentchar:
+                    startpoint[0] = spec_char['start_width'] if 'start_width' in spec_char else startpoint[0]
+                    startpoint[1] = spec_char['start_height'] if 'start_height' in spec_char else startpoint[1]
+                    if 'extrawidth' in spec_char:
+                        fontcfg['drawwidth'] += spec_char['extrawidth'] - fontcfg['extrawidth']
+                    if 'extraheight' in spec_char:
+                        fontcfg['drawheight'] += spec_char['extraheight'] - fontcfg['extraheight']
+                    break
+        
+        endpoint = (fontcfg['width'], fontcfg['height'])
+
         # 初始化完毕，创建子图（二值图）
         if fontcfg['pixel']:
             fontimg = Image.new('1', endpoint)
         else:
             fontimg = Image.new('L', endpoint)
         # 绘制
+    
         drawtool = ImageDraw.Draw(fontimg)
-        drawtool.text((0, fontcfg['start_height']), currentchar, fill=255, font=font)
+        drawtool.text(startpoint, currentchar, fill=255, font=font)
 
         # 缩放步骤可以省略，转换为透明图
         fontimg = self.convert_pic(fontimg, fontcfg['threshold'])
@@ -143,8 +162,8 @@ class FontGlyph:
     # 将字体添加到总字图上
     def add_fontimg(self, fontimg, fontcfg) -> None:
         # 主要处理换行和字体偏移量
-        width = fontcfg['blk_width']
-        height = fontcfg['blk_height']
+        width = fontcfg['width']
+        height = fontcfg['height']
         # 如果已经排到末尾，+1 是预留的间距
         if self.__x + width > self.pic_width:
             # 移动到下一行开头
@@ -159,10 +178,8 @@ class FontGlyph:
 
     # 写入字体信息到JSON (for Outertale)
     def write_fontimg_json(self, fontcfg, currentchar) -> None:
-        # 在图片上添加字体后写入配置文件
-        width = fontcfg['blk_width']
-        height = fontcfg['blk_height']
-
+        width = fontcfg['drawwidth']
+        height = fontcfg['drawheight']
         data = dict()
 
         # 构建 outertale 接受的 JSON 数据
@@ -214,7 +231,7 @@ class FontGlyph:
             
             # 修正：完成一份字体配置后，进行换行准备下一字体集导入
             self.__x = 0
-            self.__y += cfg['blk_height']
+            self.__y += cfg['height']
 
         # 完成JSON与字图的的更新，进行保存
         self.glyph.save(f"dest/{self.__name}.png")

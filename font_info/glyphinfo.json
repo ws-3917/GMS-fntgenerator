@@ -5,13 +5,18 @@
             {
                 "fontfile": "fnt_en/comicsans-px.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 16
+                "size": 16,
+                "extrawidth": -1,
+                "extraheight": -1,
+                "start_height": -1
             },
             {
                 "fontfile": "fnt_zh-cn/fzsejt.ttf",
                 "charset": "font_info/char_cn.txt",
-                "size": 17,
-                "threshold": 200
+                "size": 16,
+                "extraheight": -4,
+                "start_height": -2,
+                "threshold": 160
             }
         ]
     },
@@ -31,13 +36,28 @@
             {
                 "fontfile": "fnt_en/8bitoperator.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 16
+                "size": 16,
+                "extrawidth": -1,
+                "extraheight": -2,
+                "start_height": -2
             },
             {
                 "fontfile": "fnt_zh-cn/fzxs12.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 12,
-                "pixel": true
+                "pixel": true,
+                "extrawidth": 3,
+                "extraheight": -1,
+                "spec_char": [
+                    {
+                        "char": "。",
+                        "extraheight": 3
+                    },
+                    {
+                        "char": "，",
+                        "extraheight": 2
+                    }
+                ]
             }
         ]
     },
@@ -47,13 +67,46 @@
             {
                 "fontfile": "fnt_en/8bitoperator.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 16
+                "size": 16,
+                "extrawidth": -2,
+                "extraheight": -2,
+                "start_height": -2,
+                "spec_char": [
+                    {
+                        "char": " ",
+                        "extrawidth": -5
+                    },
+                    {
+                        "char": ":",
+                        "start_width": 2
+                    },
+                    {
+                        "char": "(",
+                        "start_width": 1
+                    },
+                    {
+                        "char": "[",
+                        "start_width": 1
+                    }
+                ]
             },
             {
                 "fontfile": "fnt_zh-cn/fzxs12.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 12,
-                "pixel": true
+                "pixel": true,
+                "extrawidth": 2,
+                "extraheight": -1,
+                "spec_char": [
+                    {
+                        "char": "。",
+                        "extraheight": 3
+                    },
+                    {
+                        "char": "，",
+                        "extraheight": 2
+                    }
+                ]
             }
         ]
     },
@@ -78,12 +131,18 @@
             {
                 "fontfile": "fnt_en/dotumche-px.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 13
+                "size": 13,
+                "extrawidth": 3,
+                "start_height": 2,
+                "extraheight": 2
             },
             {
                 "fontfile": "fnt_zh-cn/fzxs14.ttf",
                 "charset": "font_info/char_cn.txt",
-                "size": 14
+                "size": 14,
+                "extrawidth": 6,
+                "start_height": 2,
+                "extraheight": 2
             }
         ]
     },
@@ -93,7 +152,14 @@
             {
                 "fontfile": "fnt_en/mars-px.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 24
+                "size": 24,
+                "start_height": -2,
+                "spec_char": [
+                    {
+                        "char": " ",
+                        "extrawidth": -6
+                    }
+                ]
             }
         ]
     },
@@ -101,15 +167,19 @@
         "name": "Papyrus",
         "glyph_info": [
             {
-                "fontfile": "fnt_en/papyrus-px.ttf",
+                "fontfile": "fnt_en/papyrus-px_alt.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 16
+                "size": 16,
+                "extraheight": 2,
+                "start_height": 2
             },
             {
                 "fontfile": "fnt_zh-cn/fzktjt.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 20,
-                "threshold": 180
+                "threshold": 160,
+                "extraheight": -3,
+                "start_height": -2
             }
         ]
     }
