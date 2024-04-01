@@ -71,6 +71,10 @@ class FontGlyph:
         font = ImageFont.truetype(fontfile, size)
         startpoint, endpoint = (font.getbbox(currentchar)[:2], font.getbbox(currentchar)[2:])
 
+        # 修正：针对空格间距过小的问题
+        if currentchar == ' ':
+            endpoint = (endpoint[0] + 3, endpoint[1])
+
         # 初始化完毕，创建子图（二值图）
         if pixel:
             fontimg = Image.new('1', endpoint)
