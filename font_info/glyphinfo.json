@@ -7,8 +7,8 @@
                 "charset": "font_info/char_en.txt",
                 "size": 16,
                 "extrawidth": -1,
-                "extraheight": -2,
-                "start_height": -2,
+                "extraheight": -1,
+                "start_height": -1,
                 "spec_char": [
                     {
                         "char": "i",
@@ -22,6 +22,10 @@
                     },
                     {
                         "char": "m",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "w",
                         "extrawidth": 1
                     },
                     {
@@ -78,8 +82,9 @@
                 "fontfile": "fnt_zh-cn/fzsejt.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 16,
-                "extraheight": -3,
-                "start_height": -1,
+                "extraheight": -4,
+                "start_height": -2,
+                "extrawidth": 1,
                 "threshold": 160
             }
         ]
@@ -146,18 +151,14 @@
                     },
                     {
                         "char": "(",
-                        "start_width": 1
+                        "start_width": 2
                     },
                     {
                         "char": "[",
-                        "start_width": 1
+                        "start_width": 2
                     },
                     {
                         "char": "m",
-                        "extrawidth": 1
-                    },
-                    {
-                        "char": "w",
                         "extrawidth": 1
                     },
                     {
