@@ -3,13 +3,13 @@
         "name": "ComicSans",
         "glyph_info": [
             {
-                "font": "fnt_en/comicsans-px.ttf",
-                "char": "font_info/char_en.txt",
+                "fontfile": "fnt_en/comicsans-px.ttf",
+                "charset": "font_info/char_en.txt",
                 "size": 16
             },
             {
-                "font": "fnt_zh-cn/fzsejt.ttf",
-                "char": "font_info/char_cn.txt",
+                "fontfile": "fnt_zh-cn/fzsejt.ttf",
+                "charset": "font_info/char_cn.txt",
                 "size": 17,
                 "threshold": 200
             }
@@ -19,8 +19,8 @@
         "name": "CryptOfTomorrow",
         "glyph_info": [
             {
-                "font": "fnt_en/crypt.ttf",
-                "char": "font_info/char_en.txt",
+                "fontfile": "fnt_en/crypt.ttf",
+                "charset": "font_info/char_en.txt",
                 "size": 5
             }
         ]
@@ -29,23 +29,15 @@
         "name": "DeterminationMono",
         "glyph_info": [
             {
-                "font": "fnt_en/8bitoperator.ttf",
-                "char": "font_info/char_en.txt",
-                "size": 16,
-                "gap": [
-                    2,
-                    0
-                ]
+                "fontfile": "fnt_en/8bitoperator.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 16
             },
             {
-                "font": "fnt_zh-cn/fzxs12.ttf",
-                "char": "font_info/char_cn.txt",
+                "fontfile": "fnt_zh-cn/fzxs12.ttf",
+                "charset": "font_info/char_cn.txt",
                 "size": 12,
-                "pixel": true,
-                "gap": [
-                    4,
-                    2
-                ]
+                "pixel": true
             }
         ]
     },
@@ -53,23 +45,15 @@
         "name": "DeterminationSans",
         "glyph_info": [
             {
-                "font": "fnt_en/8bitoperator.ttf",
-                "char": "font_info/char_en.txt",
-                "size": 16,
-                "gap": [
-                    2,
-                    0
-                ]
+                "fontfile": "fnt_en/8bitoperator.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 16
             },
             {
-                "font": "fnt_zh-cn/fzxs12.ttf",
-                "char": "font_info/char_cn.txt",
+                "fontfile": "fnt_zh-cn/fzxs12.ttf",
+                "charset": "font_info/char_cn.txt",
                 "size": 12,
-                "pixel": true,
-                "gap": [
-                    4,
-                    2
-                ]
+                "pixel": true
             }
         ]
     },
@@ -77,13 +61,13 @@
         "name": "DiaryOfAn8BitMage",
         "glyph_info": [
             {
-                "font": "fnt_en/DiaryOfAn8BitMage.otf",
-                "char": "font_info/char_en.txt",
+                "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
+                "charset": "font_info/char_en.txt",
                 "size": 18
             },
             {
-                "font": "fnt_zh-cn/unifont.otf",
-                "char": "font_info/char_cn.txt",
+                "fontfile": "fnt_zh-cn/unifont.otf",
+                "charset": "font_info/char_cn.txt",
                 "size": 16
             }
         ]
@@ -92,22 +76,14 @@
         "name": "DotumChe",
         "glyph_info": [
             {
-                "font": "fnt_en/dotumche-px.ttf",
-                "char": "font_info/char_en.txt",
-                "size": 13,
-                "gap": [
-                    12,
-                    4
-                ]
+                "fontfile": "fnt_en/dotumche-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 13
             },
             {
-                "font": "fnt_zh-cn/fzxs14.ttf",
-                "char": "font_info/char_cn.txt",
-                "size": 14,
-                "gap": [
-                    12,
-                    4
-                ]
+                "fontfile": "fnt_zh-cn/fzxs14.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 14
             }
         ]
     },
@@ -115,8 +91,8 @@
         "name": "MarsNeedsCunnilingus",
         "glyph_info": [
             {
-                "font": "fnt_en/mars-px.ttf",
-                "char": "font_info/char_en.txt",
+                "fontfile": "fnt_en/mars-px.ttf",
+                "charset": "font_info/char_en.txt",
                 "size": 24
             }
         ]
@@ -125,15 +101,15 @@
         "name": "Papyrus",
         "glyph_info": [
             {
-                "font": "fnt_en/papyrus-px.ttf",
-                "char": "font_info/char_en.txt",
+                "fontfile": "fnt_en/papyrus-px.ttf",
+                "charset": "font_info/char_en.txt",
                 "size": 16
             },
             {
-                "font": "fnt_zh-cn/fzktjt.ttf",
-                "char": "font_info/char_cn.txt",
+                "fontfile": "fnt_zh-cn/fzktjt.ttf",
+                "charset": "font_info/char_cn.txt",
                 "size": 20,
-                "threshold": 190
+                "threshold": 180
             }
         ]
     }
