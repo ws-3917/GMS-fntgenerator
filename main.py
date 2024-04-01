@@ -130,7 +130,7 @@ class FontGlyph:
                         fontcfg['drawheight'] += spec_char['extraheight'] - fontcfg['extraheight']
                     break
         
-        endpoint = (fontcfg['width'], fontcfg['height'])
+        endpoint = (fontcfg['drawwidth'], fontcfg['drawheight'])
 
         # 初始化完毕，创建子图（二值图）
         if fontcfg['pixel']:
@@ -162,8 +162,8 @@ class FontGlyph:
     # 将字体添加到总字图上
     def add_fontimg(self, fontimg, fontcfg) -> None:
         # 主要处理换行和字体偏移量
-        width = fontcfg['width']
-        height = fontcfg['height']
+        width = fontcfg['drawwidth']
+        height = fontcfg['drawheight']
         # 如果已经排到末尾，+1 是预留的间距
         if self.__x + width > self.pic_width:
             # 移动到下一行开头

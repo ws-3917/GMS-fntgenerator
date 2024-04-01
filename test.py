@@ -1,14 +1,14 @@
 from PIL import Image, ImageFont, ImageDraw
 import numpy as np
-fontfile = "fnt_zh-cn/fzktjt.ttf"
-ch = "$$The Quick Brown Fox Jumps Over The Lazy Dog一只狐狸赢了什么从一只懒狗身上跃过去"
-fnt = ImageFont.truetype(fontfile, 20)
+fontfile = "fnt_zh-cn/fzsejt.ttf"
+ch = "Ag赢"
+fnt = ImageFont.truetype(fontfile, 18)
 startpoint, endpoint = fnt.getbbox(ch)[:2], fnt.getbbox(ch)[2:]
-newimg = Image.new('1', endpoint)
+newimg = Image.new('1', (endpoint[0], endpoint[1]))
 drawtool = ImageDraw.Draw(newimg)
 
 # 将二值图转为透明灰度图
-drawtool.text((0, 1), ch, font=fnt, fill=255)
+drawtool.text((0, 0), ch, font=fnt, fill=255)
 arr = np.array(newimg)
 # 创建一个新数组用于存储灰度和透明度
 new_arr = np.empty((arr.shape[0], arr.shape[1], 2), dtype=np.uint8)

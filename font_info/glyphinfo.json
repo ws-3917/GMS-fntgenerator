@@ -7,15 +7,79 @@
                 "charset": "font_info/char_en.txt",
                 "size": 16,
                 "extrawidth": -1,
-                "extraheight": -1,
-                "start_height": -1
+                "extraheight": -2,
+                "start_height": -2,
+                "spec_char": [
+                    {
+                        "char": "i",
+                        "start_width": 1,
+                        "extrawidth": -3
+                    },
+                    {
+                        "char": "l",
+                        "start_width": 1,
+                        "extrawidth": -3
+                    },
+                    {
+                        "char": "m",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "A",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "C",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "G",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "H",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "M",
+                        "extrawidth": 2
+                    },
+                    {
+                        "char": "N",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "O",
+                        "extrawidth": 2
+                    },
+                    {
+                        "char": "Q",
+                        "extrawidth": 2
+                    },
+                    {
+                        "char": "W",
+                        "extrawidth": 3
+                    },
+                    {
+                        "char": "X",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "Y",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "Z",
+                        "extrawidth": 1
+                    }
+                ]
             },
             {
                 "fontfile": "fnt_zh-cn/fzsejt.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 16,
-                "extraheight": -4,
-                "start_height": -2,
+                "extraheight": -3,
+                "start_height": -1,
                 "threshold": 160
             }
         ]
@@ -51,11 +115,11 @@
                 "spec_char": [
                     {
                         "char": "。",
-                        "extraheight": 3
+                        "start_height": 3
                     },
                     {
                         "char": "，",
-                        "extraheight": 2
+                        "start_height": 2
                     }
                 ]
             }
@@ -87,6 +151,22 @@
                     {
                         "char": "[",
                         "start_width": 1
+                    },
+                    {
+                        "char": "m",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "w",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "M",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "W",
+                        "extrawidth": 1
                     }
                 ]
             },
@@ -171,14 +251,21 @@
                 "charset": "font_info/char_en.txt",
                 "size": 16,
                 "extraheight": 2,
-                "start_height": 2
+                "start_height": 2,
+                "spec_font": [
+                    {
+                        "char": "I",
+                        "start_width": 1,
+                        "extrawidth": -3
+                    }
+                ]
             },
             {
                 "fontfile": "fnt_zh-cn/fzktjt.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 20,
                 "threshold": 160,
-                "extraheight": -3,
+                "extraheight": -2,
                 "start_height": -2
             }
         ]
