@@ -93,7 +93,7 @@ class FontGlyph:
             # 4-1 Update: 全面取消 gap 参数
             # 采用矩形拼接的想法：将每种字体的字符放在一个宽度和高度固定的矩形框中
             # 矩形框的宽度和高度可手动指定，如果没有指定，则按照某一字符的endpoint指定
-            # 指定了矩形框大小后，再指定每一个字体的绘制高度起点（可以是负数）
+            # 指定了矩形框大小后，再指定每一个字体的绘制高度起点（可以是负数）。
             font = ImageFont.truetype(cfg['fontfile'], size=cfg['size'])
             fontselect = ["A", "g", "赢"]
 
