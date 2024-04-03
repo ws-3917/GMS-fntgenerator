@@ -6,7 +6,7 @@ import numpy as np
 # 定义字图类
 class FontGlyph:
     # 初始化
-    def __init__(self, name, basicinfo_csv, glyphinfo_json, fallbackfont='', width=2048) -> None:
+    def __init__(self, name, glyphinfo_json, basicinfo_csv, fallbackfont='', width=2048) -> None:
         # 当前绘制的x,y位置
         self.__x = 0
         self.__y = 0
@@ -59,9 +59,11 @@ class FontGlyph:
                 break
 
         # 对于 Outertale 的特殊处理
-        data['shift'] = {"x": float(data['shift_x']), "y": float(data['shift_y'])}
-        data.pop('shift_x')
-        data.pop('shift_y')
+        if data.get('shift_x') and data.get('shift_y'):
+            data['shift'] = {"x": float(data.get('shift_x') or 0), "y": float(data.get('shift_y') or 0)}
+            data.pop('shift_x')
+            data.pop('shift_y')
+        
         data['size'] = int(data['size'])
 
         # 准备绘制字图
@@ -262,7 +264,7 @@ class FontGlyph:
                 self.__fbfont = None
 
             with open(cfg['charset'], "r", encoding="UTF-8") as file:
-                # # 获取文件长度
+                # 获取字符集的字符个数
                 # limit = len(file.read())
                 # file.seek(0, 0)
                 limit = self.__charcount[it]
@@ -271,7 +273,7 @@ class FontGlyph:
                     ch = file.read(1)
                     if ch == '\n':   # 跳过换行符
                         continue
-                    # 首先，绘制字图
+                    # 首先，绘制单字字图
                     fontimg, endpoint = self.draw_singlefont(ch, cfg)
                     # 04-03 Update：如果发现空字图，说明当前字体缺少对应字符
                     if not fontimg:
@@ -281,7 +283,7 @@ class FontGlyph:
                             fontimg, endpoint = self.draw_singlefont(ch, cfg, fallback=True)
                         else:   # 否则，直接跳过这一字体
                             continue
-
+                    # 随后，将单字添加到总的大字图
                     self.add_fontimg(fontimg, endpoint)
                     # 接着，更新JSON文件或CSV文件
                     self.update_fontimg_json(ch, endpoint)
@@ -321,7 +323,8 @@ def main():
 
     # 生成字图和配置文件
     for name in fontnamelist:
-        glyph = FontGlyph(name, csv_path, json_path, fallbackfont="fnt_zh-cn/unifont.otf", width=1024)    # 初始化字图对象
+        glyph = FontGlyph(name, json_path, csv_path,
+                          fallbackfont="fnt_zh-cn/unifont.otf", width=1024)    # 初始化字图对象
         glyph.glyph_genetask()  # 生成字图
 
         glyph.save_glyph(f"dist/{name}.png")          # 保存字图

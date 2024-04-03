@@ -81,7 +81,7 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/fzsejt.ttf",
+                "fontfile": "fnt_zh-cn/fzse_GBK.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 16,
                 "extraheight": -4,
@@ -358,7 +358,7 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/fzktjt.ttf",
+                "fontfile": "fnt_zh-cn/fzkt_GBK.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 20,
                 "threshold": 160,
