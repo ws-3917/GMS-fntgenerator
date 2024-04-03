@@ -6,7 +6,7 @@ import numpy as np
 # 字体路径、待显示字符、字体大小、绘图类型
 # '1'代表二值图（黑白），'L'代表灰度图
 fontfile = "fnt_zh-cn/fzsejt.ttf"   
-ch = "你"
+ch = "魖"
 size = 18
 glyphtype = '1'
 
@@ -32,6 +32,6 @@ new_arr = np.empty((arr.shape[0], arr.shape[1], 2), dtype=np.uint8)
 new_arr[..., 0] = new_arr[..., 1] = (arr>200)*255   # 设置灰度和透明度
 
 # 预览时不方便查看透明图，可以将下面这一行代码注释掉，注释后透明化处理将不写入图片，预览为黑色背景
-#newimg = Image.fromarray(new_arr, "LA")
+newimg = Image.fromarray(new_arr, "LA")
 #newimg.save("test.png")
 newimg.show()

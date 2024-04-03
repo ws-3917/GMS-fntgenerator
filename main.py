@@ -264,6 +264,7 @@ class FontGlyph:
                     # 首先，绘制字图
                     fontimg, endpoint = self.draw_singlefont(ch, cfg)
                     self.add_fontimg(fontimg, endpoint)
+                    # 如果发现绘制的字图是空白的（
                     # 接着，更新JSON文件或CSV文件
                     self.update_fontimg_json(ch, endpoint)
                     self.update_fontimg_csv(ch, endpoint)
