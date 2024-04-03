@@ -6,17 +6,17 @@ import numpy as np
 # 定义字图类
 class FontGlyph:
     # 初始化
-    pic_width = 1024    # 全局宽度
-
-    def __init__(self, name, basicinfo_csv, glyphinfo_json) -> None:
+    def __init__(self, name, basicinfo_csv, glyphinfo_json, fallbackfont='', width=2048) -> None:
         # 当前绘制的x,y位置
         self.__x = 0
         self.__y = 0
         self.__name = name
-        self.__charcount = []       # 用于字符计数
+        self.__charcount = []        # 用于字符计数
+        self.__fbfontpath = fallbackfont    # 缺省字体路径
 
         # 主字图
         self.__fontconfig = self.init_fontconfig(glyphinfo_json)
+        self.pic_width = width
         self.pic_height = self.calc_height()
         self.glyph = Image.fromarray(np.zeros((self.pic_height, self.pic_width, 2), np.uint8))
 
@@ -131,8 +131,6 @@ class FontGlyph:
 
         # 根据字符调整配置
         spec_chars = fontcfg.get('spec_char', {})
-        if currentchar == 'm':
-            pass
         if currentchar in spec_chars:
             spec = spec_chars[currentchar]
             config['startpoint'][0] += spec.get('start_width', 0)
@@ -143,8 +141,7 @@ class FontGlyph:
         return config
     
     # 绘制单个字体字图
-    def draw_singlefont(self, currentchar : str, fontcfg : dict) -> tuple:
-
+    def draw_singlefont(self, currentchar : str, fontcfg : dict, fallback : bool = False) -> tuple:
         # 04-03 更新：分离 特殊字符处理和字符绘制的代码
         config = self.get_font_config(currentchar, fontcfg)
         
@@ -157,15 +154,22 @@ class FontGlyph:
 
         # 绘制
         drawtool = ImageDraw.Draw(fontimg)
-        drawtool.text(startpoint, currentchar, fill=255, font=self.__font)
+        drawfont = self.__fbfont if fallback else self.__font
+        
+        drawtool.text(startpoint, currentchar, fill=255, font=drawfont)
 
         # 缩放步骤可以省略，转换为透明图
-        fontimg = self.convert_pic(fontimg, fontcfg['threshold'])
+        fontimg = self.convert_pic(fontimg, fontcfg['threshold'], currentchar)
         return (fontimg, endpoint)
 
     # 将生成的二值图透明化，转为含Alpha的灰度图
-    def convert_pic(self, fontimg : Image, threshold : int) -> Image:
+    def convert_pic(self, fontimg : Image, threshold : int, currentchar : str) -> Image:
         fontimg_arr = np.asarray(fontimg)
+
+        # 04-03 Update：如果发现绘制的字图全空白且对应字符不是空格，则直接跳过转换，返回None
+        if currentchar != ' ' and np.all(fontimg_arr == 0):
+            return None
+        
         new_arr = np.empty((fontimg_arr.shape[0], fontimg_arr.shape[1], 2), np.uint8)
 
         # 二值化
@@ -250,6 +254,12 @@ class FontGlyph:
             # 对于字库中的每个字符：不断读取并发送给绘制程序
             # 首先，对字体进行实例化
             self.__font = ImageFont.truetype(cfg['fontfile'], cfg['size'])
+            # 04-03 更新：缺字时尝试调用缺省字体路径
+            if os.path.exists(self.__fbfontpath):
+                self.__fbfont = ImageFont.truetype(self.__fbfontpath, cfg['size'])  
+            else:
+                print("WARNING: fallback font not found.")
+                self.__fbfont = None
 
             with open(cfg['charset'], "r", encoding="UTF-8") as file:
                 # # 获取文件长度
@@ -263,8 +273,16 @@ class FontGlyph:
                         continue
                     # 首先，绘制字图
                     fontimg, endpoint = self.draw_singlefont(ch, cfg)
+                    # 04-03 Update：如果发现空字图，说明当前字体缺少对应字符
+                    if not fontimg:
+                        # 此时，尝试调用缺省字体文件
+                        if self.__fbfont:
+                            # 如果发现缺省字体，则用缺省字体重新绘制
+                            fontimg, endpoint = self.draw_singlefont(ch, cfg, fallback=True)
+                        else:   # 否则，直接跳过这一字体
+                            continue
+
                     self.add_fontimg(fontimg, endpoint)
-                    # 如果发现绘制的字图是空白的（
                     # 接着，更新JSON文件或CSV文件
                     self.update_fontimg_json(ch, endpoint)
                     self.update_fontimg_csv(ch, endpoint)
@@ -280,13 +298,13 @@ class FontGlyph:
 
 # 执行主程序
 def main():
-    # 文件路径
+    # 配置文件路径
     csv_path = "font_info/basicinfo.csv"
     json_path = "font_info/glyphinfo.json"
 
     # 输出路径
     if os.path.exists("dist"):
-        os.system("rm -r dist")
+        os.system('powershell "rm -r dist"')
     os.mkdir("dist")
 
     # 字体名称
@@ -303,7 +321,7 @@ def main():
 
     # 生成字图和配置文件
     for name in fontnamelist:
-        glyph = FontGlyph(name, csv_path, json_path)    # 初始化字图对象
+        glyph = FontGlyph(name, csv_path, json_path, fallbackfont="fnt_zh-cn/unifont.otf", width=1024)    # 初始化字图对象
         glyph.glyph_genetask()  # 生成字图
 
         glyph.save_glyph(f"dist/{name}.png")          # 保存字图
