@@ -9,82 +9,76 @@
                 "extrawidth": -1,
                 "extraheight": -1,
                 "start_height": -1,
-                "spec_char": [
-                    {
-                        "char": "i",
+                "spec_char": {
+                    "i": {
                         "start_width": 1,
                         "extrawidth": -3
                     },
-                    {
-                        "char": "l",
+                    "l": {
                         "start_width": 1,
                         "extrawidth": -3
                     },
-                    {
-                        "char": "m",
+                    "m": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "w",
+                    "w": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "A",
-                        "extrawidth": 1
-                    },
-                    {
-                        "char": "C",
-                        "extrawidth": 1
-                    },
-                    {
-                        "char": "G",
-                        "extrawidth": 1
-                    },
-                    {
-                        "char": "H",
-                        "extrawidth": 1
-                    },
-                    {
-                        "char": "M",
+                    "@": {
                         "extrawidth": 2
                     },
-                    {
-                        "char": "N",
+                    "A": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "O",
+                    "C": {
+                        "extrawidth": 1
+                    },
+                    "G": {
                         "extrawidth": 2
                     },
-                    {
-                        "char": "P",
+                    "H": {
+                        "extrawidth": 1
+                    },
+                    "M": {
+                        "extrawidth": 3
+                    },
+                    "N": {
+                        "extrawidth": 2
+                    },
+                    "O": {
+                        "extrawidth": 3
+                    },
+                    "P": {
                         "extrawidth": -1
                     },
-                    {
-                        "char": "Q",
-                        "extrawidth": 3
+                    "Q": {
+                        "extrawidth": 4
                     },
-                    {
-                        "char": "W",
-                        "extrawidth": 3
-                    },
-                    {
-                        "char": "X",
+                    "T": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "Y",
+                    "U": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "Z",
+                    "V": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "d",
+                    "W": {
+                        "extrawidth": 4
+                    },
+                    "X": {
+                        "extrawidth": 2
+                    },
+                    "Y": {
+                        "extrawidth": 1
+                    },
+                    "Z": {
+                        "extrawidth": 1
+                    },
+                    "d": {
                         "extrawidth": 0
                     }
-                ]
+                }
             },
             {
                 "fontfile": "fnt_zh-cn/fzsejt.ttf",
@@ -123,7 +117,18 @@
                 "size": 16,
                 "extrawidth": -1,
                 "extraheight": -2,
-                "start_height": -2
+                "start_height": -2,
+                "spec_char": {
+                    ":": {
+                        "start_width": 2
+                    },
+                    "(": {
+                        "start_width": 2
+                    },
+                    "[": {
+                        "start_width": 2
+                    }
+                }
             },
             {
                 "fontfile": "fnt_zh-cn/fzxs12.ttf",
@@ -132,16 +137,14 @@
                 "pixel": true,
                 "extrawidth": 3,
                 "extraheight": -1,
-                "spec_char": [
-                    {
-                        "char": "。",
+                "spec_char": {
+                    "。": {
                         "start_height": 3
                     },
-                    {
-                        "char": "，",
+                    "，": {
                         "start_height": 2
                     }
-                ]
+                }
             }
         ]
     },
@@ -155,52 +158,53 @@
                 "extrawidth": -2,
                 "extraheight": -2,
                 "start_height": -2,
-                "spec_char": [
-                    {
-                        "char": " ",
-                        "extrawidth": -5
+                "spec_char": {
+                    " ": {
+                        "extrawidth": -3
                     },
-                    {
-                        "char": ":",
-                        "start_width": 2
+                    ":": {
+                        "extrawidth": -2
                     },
-                    {
-                        "char": "(",
-                        "start_width": 2
+                    "(": {
+                        "extrawidth": -2
                     },
-                    {
-                        "char": "[",
-                        "start_width": 2
+                    "[": {
+                        "extrawidth": -2
                     },
-                    {
-                        "char": "m",
-                        "extrawidth": -1
+                    "]": {
+                        "extrawidth": -2
                     },
-                    {
-                        "char": "w",
-                        "extrawidth": -1
+                    ")": {
+                        "extrawidth": -2
                     },
-                    {
-                        "char": "M",
-                        "extrawidth": -1
+                    "{": {
+                        "extrawidth": -2
                     },
-                    {
-                        "char": "W",
-                        "extrawidth": -1
+                    "}": {
+                        "extrawidth": -2
                     },
-                    {
-                        "char": "%",
-                        "extrawidth": -1
+                    "m": {
+                        "extrawidth": 1
                     },
-                    {
-                        "char": "#",
-                        "extrawidth": -1
+                    "w": {
+                        "extrawidth": 1
                     },
-                    {
-                        "char": "*",
-                        "extrawidth": -1
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "%": {
+                        "extrawidth": 1
+                    },
+                    "#": {
+                        "extrawidth": 1
+                    },
+                    "*": {
+                        "extrawidth": 1
                     }
-                ]
+                }
             },
             {
                 "fontfile": "fnt_zh-cn/fzxs12.ttf",
@@ -209,16 +213,14 @@
                 "pixel": true,
                 "extrawidth": 2,
                 "extraheight": -1,
-                "spec_char": [
-                    {
-                        "char": "。",
+                "spec_char": {
+                    "。": {
                         "start_height": 3
                     },
-                    {
-                        "char": "，",
+                    "，": {
                         "start_height": 2
                     }
-                ]
+                }
             }
         ]
     },
@@ -229,43 +231,35 @@
                 "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
                 "charset": "font_info/char_en.txt",
                 "size": 18,
-                "spec_char": [
-                    {
-                        "char": "1",
+                "spec_char": {
+                    "1": {
                         "extrawidth": -1
                     },
-                    {
-                        "char": "I",
+                    "I": {
                         "extrawidth": -2
                     },
-                    {
-                        "char": "M",
+                    "M": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "N",
+                    "N": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "W",
+                    "W": {
                         "extrawidth": 1
                     },
-                    {
-                        "char": "i",
+                    "i": {
                         "extrawidth": -3,
                         "start_width": 1
                     },
-                    {
-                        "char": "l",
+                    "l": {
                         "extrawidth": -3,
                         "start_width": 1
                     },
-                    {
-                        "char": ".",
+                    ".": {
                         "start_width": 2,
-                        "extrawidth": -1
+                        "extrawidth": -2
                     }
-                ]
+                }
             },
             {
                 "fontfile": "fnt_zh-cn/unifont.otf",
@@ -281,8 +275,8 @@
                 "fontfile": "fnt_en/dotumche-px.ttf",
                 "charset": "font_info/char_en.txt",
                 "size": 13,
-                "extrawidth": 3,
                 "start_height": 2,
+                "extrawidth": 3,
                 "extraheight": 2
             },
             {
@@ -303,28 +297,23 @@
                 "charset": "font_info/char_en.txt",
                 "size": 24,
                 "start_height": -2,
-                "spec_char": [
-                    {
-                        "char": " ",
-                        "extrawidth": -6
+                "spec_char": {
+                    " ": {
+                        "extrawidth": -4
                     },
-                    {
-                        "char": "M",
-                        "extrawidth": 2
+                    "M": {
+                        "extrawidth": 3
                     },
-                    {
-                        "char": "W",
-                        "extrawidth": 2
+                    "W": {
+                        "extrawidth": 3
                     },
-                    {
-                        "char": "m",
-                        "extrawidth": 2
+                    "m": {
+                        "extrawidth": 3
                     },
-                    {
-                        "char": "w",
-                        "extrawidth": 2
+                    "w": {
+                        "extrawidth": 3
                     }
-                ]
+                }
             },
             {
                 "fontfile": "fnt_zh-cn/unifont.otf",
@@ -343,13 +332,30 @@
                 "size": 16,
                 "extraheight": 2,
                 "start_height": 2,
-                "spec_font": [
-                    {
-                        "char": "I",
-                        "start_width": 1,
+                "spec_char": {
+                    "I": {
+                        "start_height": -1,
                         "extrawidth": -3
+                    },
+                    "B": {
+                        "extrawidth": 1
+                    },
+                    "D": {
+                        "extrawidth": 1
+                    },
+                    "G": {
+                        "extrawidth": 1
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "S": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
                     }
-                ]
+                }
             },
             {
                 "fontfile": "fnt_zh-cn/fzktjt.ttf",
