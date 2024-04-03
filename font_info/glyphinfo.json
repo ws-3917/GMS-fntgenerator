@@ -57,8 +57,12 @@
                         "extrawidth": 2
                     },
                     {
+                        "char": "P",
+                        "extrawidth": -1
+                    },
+                    {
                         "char": "Q",
-                        "extrawidth": 2
+                        "extrawidth": 3
                     },
                     {
                         "char": "W",
@@ -75,6 +79,10 @@
                     {
                         "char": "Z",
                         "extrawidth": 1
+                    },
+                    {
+                        "char": "d",
+                        "extrawidth": 0
                     }
                 ]
             },
@@ -95,7 +103,14 @@
             {
                 "fontfile": "fnt_en/crypt.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 5
+                "size": 5,
+                "start_height": 1,
+                "extraheight": 1
+            },
+            {
+                "fontfile": "fnt_zh-cn/ChillBitmap7x.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 8
             }
         ]
     },
@@ -156,6 +171,34 @@
                     {
                         "char": "[",
                         "start_width": 2
+                    },
+                    {
+                        "char": "m",
+                        "extrawidth": -1
+                    },
+                    {
+                        "char": "w",
+                        "extrawidth": -1
+                    },
+                    {
+                        "char": "M",
+                        "extrawidth": -1
+                    },
+                    {
+                        "char": "W",
+                        "extrawidth": -1
+                    },
+                    {
+                        "char": "%",
+                        "extrawidth": -1
+                    },
+                    {
+                        "char": "#",
+                        "extrawidth": -1
+                    },
+                    {
+                        "char": "*",
+                        "extrawidth": -1
                     }
                 ]
             },
@@ -169,11 +212,11 @@
                 "spec_char": [
                     {
                         "char": "。",
-                        "extraheight": 3
+                        "start_height": 3
                     },
                     {
                         "char": "，",
-                        "extraheight": 2
+                        "start_height": 2
                     }
                 ]
             }
@@ -185,7 +228,44 @@
             {
                 "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
                 "charset": "font_info/char_en.txt",
-                "size": 18
+                "size": 18,
+                "spec_char": [
+                    {
+                        "char": "1",
+                        "extrawidth": -1
+                    },
+                    {
+                        "char": "I",
+                        "extrawidth": -2
+                    },
+                    {
+                        "char": "M",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "N",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "W",
+                        "extrawidth": 1
+                    },
+                    {
+                        "char": "i",
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    {
+                        "char": "l",
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    {
+                        "char": ".",
+                        "start_width": 2,
+                        "extrawidth": -1
+                    }
+                ]
             },
             {
                 "fontfile": "fnt_zh-cn/unifont.otf",
@@ -227,8 +307,30 @@
                     {
                         "char": " ",
                         "extrawidth": -6
+                    },
+                    {
+                        "char": "M",
+                        "extrawidth": 2
+                    },
+                    {
+                        "char": "W",
+                        "extrawidth": 2
+                    },
+                    {
+                        "char": "m",
+                        "extrawidth": 2
+                    },
+                    {
+                        "char": "w",
+                        "extrawidth": 2
                     }
                 ]
+            },
+            {
+                "fontfile": "fnt_zh-cn/unifont.otf",
+                "charset": "font_info/char_cn.txt",
+                "size": 16,
+                "pixel": true
             }
         ]
     },
