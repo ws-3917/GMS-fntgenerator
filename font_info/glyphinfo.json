@@ -139,10 +139,26 @@
                 "extraheight": -1,
                 "spec_char": {
                     "。": {
-                        "start_height": 3
+                        "start_height": 2
                     },
                     "，": {
                         "start_height": 2
+                    },
+                    "“": {
+                        "start_width": -4,
+                        "extrawidth": -5
+                    },
+                    "”": {
+                        "start_width": -2,
+                        "extrawidth": -5
+                    },
+                    "‘": {
+                        "start_width": -7,
+                        "extrawidth": -8
+                    },
+                    "’": {
+                        "start_width": -2,
+                        "extrawidth": -8
                     }
                 }
             }
@@ -215,10 +231,26 @@
                 "extraheight": -1,
                 "spec_char": {
                     "。": {
-                        "start_height": 3
+                        "start_height": 2
                     },
                     "，": {
                         "start_height": 2
+                    },
+                    "“": {
+                        "start_width": -4,
+                        "extrawidth": -5
+                    },
+                    "”": {
+                        "start_width": -2,
+                        "extrawidth": -5
+                    },
+                    "‘": {
+                        "start_width": -7,
+                        "extrawidth": -8
+                    },
+                    "’": {
+                        "start_width": -2,
+                        "extrawidth": -8
                     }
                 }
             }
