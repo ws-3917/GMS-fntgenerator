@@ -349,7 +349,7 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/unifont.otf",
+                "fontfile": "fnt_zh-cn/ChillBitmap7x.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 16,
                 "pixel": true
