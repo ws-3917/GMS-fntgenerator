@@ -131,7 +131,7 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/fzxs12.ttf",
+                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 12,
                 "pixel": true,
@@ -154,11 +154,11 @@
                     },
                     "‘": {
                         "start_width": -7,
-                        "extrawidth": -8
+                        "extrawidth": -9
                     },
                     "’": {
                         "start_width": -2,
-                        "extrawidth": -8
+                        "extrawidth": -9
                     }
                 }
             }
@@ -179,7 +179,8 @@
                         "extrawidth": -3
                     },
                     ":": {
-                        "extrawidth": -2
+                        "extrawidth": -2,
+                        "start_width": 1
                     },
                     "(": {
                         "extrawidth": -2
@@ -223,7 +224,7 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/fzxs12.ttf",
+                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 12,
                 "pixel": true,
@@ -246,11 +247,11 @@
                     },
                     "‘": {
                         "start_width": -7,
-                        "extrawidth": -8
+                        "extrawidth": -9
                     },
                     "’": {
                         "start_width": -2,
-                        "extrawidth": -8
+                        "extrawidth": -9
                     }
                 }
             }
@@ -392,7 +393,7 @@
             {
                 "fontfile": "fnt_zh-cn/fzkt_GBK.ttf",
                 "charset": "font_info/char_cn.txt",
-                "size": 20,
+                "size": 18,
                 "threshold": 160,
                 "extraheight": -2,
                 "start_height": -2

@@ -167,9 +167,10 @@ class FontGlyph:
     # 将生成的二值图透明化，转为含Alpha的灰度图
     def convert_pic(self, fontimg : Image, threshold : int, currentchar : str) -> Image:
         fontimg_arr = np.asarray(fontimg)
+        blankchr = [' ', '　']
 
         # 04-03 Update：如果发现绘制的字图全空白且对应字符不是空格，则直接跳过转换，返回None
-        if currentchar != ' ' and np.all(fontimg_arr == 0):
+        if currentchar not in blankchr and np.all(fontimg_arr == 0):
             return None
         
         new_arr = np.empty((fontimg_arr.shape[0], fontimg_arr.shape[1], 2), np.uint8)
@@ -329,10 +330,10 @@ def main():
 
         glyph.save_glyph(f"dist/{name}.png")          # 保存字图
         distjson.append(glyph.get_fontimg_json())     # 写入JSON
-        glyph.write_fontimg_csv(f"dist/glyphs_fnt_{name}.csv")  # 写入csv
+        #glyph.write_fontimg_csv(f"dist/glyphs_fnt_{name}.csv")  # 写入csv
     
     # 保存JSON文件
-    with open(f"dist/fonts.json", "w", encoding="UTF-8") as json_file:
+    with open(f"dist/index.json", "w", encoding="UTF-8") as json_file:
         json.dump(distjson, json_file, 
                   ensure_ascii=False, indent=4, separators=(", ", ": "))
     
