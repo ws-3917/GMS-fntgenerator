@@ -1,13 +1,14 @@
-本文件夹存放字体字库表和字体信息：
+# README.md
+This folder contains the font libraries and font information:
 
-1. char_cn.txt 为主要中文字体存放文件夹，需进行Unicode编码排序
-2. char_en.txt 为西文字体存放文件夹，字符较少可直接批量生成
-3. char_sup_*.txt 为补充字体文件夹，如果有需要可以从中取字
-4. basicinfo.csv 为游戏内字体基本信息CSV
-5. glyphinfo.json 为制作字图的字体配置信息
+1. `char_cn.txt`: The main folder for storing Chinese fonts, which require sorting by Unicode encoding.
+2. `char_en.txt`: The folder for storing Western fonts, which contain fewer characters and can be generated in bulk.
+3. `char_sup_*.txt`: Supplementary font files, which can be used to retrieve additional characters as needed.
+4. `basicinfo.csv`: A CSV file containing basic information about the fonts used in the game.
+5. `glyphinfo.json`: Configuration information for generating font images.
 
-默认中文字体包括：
-1. 常用中文标点符号，。、；：“”‘’（）【】《》—…！？·￥～〖〗〔〕
-2. 规范简体汉字表中所有的一级常用字
-3. 中文汉字字频前 5000 的汉字
-（2，3的汉字列表进行了合并）
+The default set of Chinese fonts includes:
+1. Common Chinese punctuation marks: 。、；：“”‘’（）【】《》—…！？·￥～〖〗〔〕
+2. All primary common characters from the standard simplified Chinese character table.
+3. The top 5000 most frequently used Chinese characters.
+   (The character lists in 2 and 3 have been merged.)

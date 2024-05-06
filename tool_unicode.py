@@ -1,10 +1,10 @@
-# Unicode 工具 - 可以快速查询字符的Unicode值, 方便定位和补字
-# 该程序为重构前实现的小工具，交互的逻辑较多。
+# Unicode Tool - Quickly look up Unicode values of characters, useful for locating and filling in missing characters
+# This program is a pre-refactor utility with extensive interactive logic.
 
-# unicode 查 char
+# Unicode to character lookup
 def unicode_lookup():
     while True:
-        code = input("请输入十进制或十六进制编码 (十六进制以0x开头, 输入q返回主菜单): ")
+        code = input("Enter a decimal or hexadecimal code (start with 0x for hex, enter 'q' to return to the main menu): ")
         if code.lower() == 'q':
             break
         try:
@@ -12,47 +12,47 @@ def unicode_lookup():
                 code = int(code, 16)
             else:
                 code = int(code)
-            print("对应的字符是:", chr(code))
+            print("The corresponding character is:", chr(code))
         except ValueError:
-            print("输入的编码无效. ")
+            print("Invalid encoding entered.")
 
-# char 查 unicode
+# Character to Unicode lookup
 def char_encoding_lookup():
     while True:
-        chars = input("请输入字符 (可输入多个字符, 输入quit返回主菜单): ")
+        chars = input("Enter characters (you can enter multiple characters, enter 'quit' to return to the main menu): ")
         if chars.lower() == 'quit':
             break
         for char in chars:
-            print(f"'{char}': 十进制={ord(char)}, 十六进制={hex(ord(char))}")
+            print(f"'{char}': Decimal={ord(char)}, Hexadecimal={hex(ord(char))}")
 
-# 输出unicode范围内所有字符到文件
+# Output all characters within a Unicode range to a file
 def output_unicode_range():
-    filename = "char_cn.txt"    # 设置输出文件名
+    filename = "char_cn.txt"    # Set the output file name
 
-    # 交互
-    print(f"如果{filename}已存在, 新内容将被追加到文件末尾. ")
-    start = input("请输入范围的起始编码 (十六进制): ")
-    end = input("请输入范围的结束编码 (十六进制): ")
+    # Interaction
+    print(f"If {filename} already exists, new content will be appended to the end of the file.")
+    start = input("Enter the start code of the range (hexadecimal): ")
+    end = input("Enter the end code of the range (hexadecimal): ")
 
-    # 写入文件
+    # Write to file
     try:
         start = int(start, 16)
         end = int(end, 16)
         with open(filename, "a", encoding="utf-8") as file:
             for code in range(start, end + 1):
                 file.write(chr(code))
-        print(f"已输出到{filename}. ")
+        print(f"Output to {filename}.")
     except ValueError:
-        print("输入的编码无效. ")
+        print("Invalid encoding entered.")
 
 def main_menu():
     while True:
-        print("\n功能选择: ")
-        print("1. Unicode查询")
-        print("2. 输入字符查询编码")
-        print("3. 输出指定Unicode范围的所有字符到文件")
-        print("4. 退出")
-        choice = input("请输入选项 (1/2/3/4): ")
+        print("\nMenu options:")
+        print("1. Unicode lookup")
+        print("2. Input characters to lookup encoding")
+        print("3. Output all characters in a specified Unicode range to a file")
+        print("4. Exit")
+        choice = input("Please enter your choice (1/2/3/4): ")
         if choice == "1":
             unicode_lookup()
         elif choice == "2":
@@ -60,10 +60,10 @@ def main_menu():
         elif choice == "3":
             output_unicode_range()
         elif choice == "4":
-            print("退出程序. ")
+            print("Exiting the program.")
             break
         else:
-            print("无效的选项, 请重新输入. ")
+            print("Invalid option, please re-enter.")
 
 if __name__ == "__main__":
     main_menu()

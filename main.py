@@ -1,48 +1,47 @@
-# 字图配置生成主程序
 import csv, json, os
 from PIL import Image, ImageFont, ImageDraw
 import numpy as np
 
-# 定义字图类
+# Define the FontGlyph class
 class FontGlyph:
-    # 初始化
+    # Initialization
     def __init__(self, name, glyphinfo_json, basicinfo_csv, fallbackfont='', width=2048) -> None:
-        # 当前绘制的x,y位置
+        # Current x,y drawing position
         self.__x = 0
         self.__y = 0
         self.__name = name
-        self.__charcount = []        # 用于字符计数
-        self.__fbfontpath = fallbackfont    # 缺省字体路径
+        self.__charcount = []  # For character counting
+        self.__fbfontpath = fallbackfont  # Fallback font path
 
-        # 主字图
+        # Main glyph image
         self.__fontconfig = self.init_fontconfig(glyphinfo_json)
         self.pic_width = width
         self.pic_height = self.calc_height()
         self.glyph = Image.fromarray(np.zeros((self.pic_height, self.pic_width, 2), np.uint8))
 
-        # 主JSON，csv
+        # Main JSON, csv
         self.__jsonfile = self.init_json(basicinfo_csv)
         self.__csv = [
-            [self.__name, self.__jsonfile['size'], False, False, 1, 0, 1, 1]    # 写入csv信息行
+            [self.__name, self.__jsonfile['size'], False, False, 1, 0, 1, 1]  # CSV info line
         ]
 
-    # 04-01 更新：图像高度计算
+    # Update 04-01: Calculate image height
     def calc_height(self):
         expectedheight = 0
-        it = 0  # 迭代指标
+        it = 0  # Iteration index
         for cfg in self.__fontconfig:
-            # 通过字符总数和字体矩阵宽度计算行数
+            # Calculate the number of lines based on the total number of characters and font matrix width
             charlen = self.__charcount[it]
 
             ch_perline = self.pic_width // cfg['width']
-            linecount = charlen // ch_perline + int(charlen % ch_perline > 0)  # 向上取整
+            linecount = charlen // ch_perline + int(charlen % ch_perline > 0)  # Round up
 
             expectedheight += linecount * cfg['height']
             it += 1
         
         return expectedheight
 
-    # 初始化基本信息并写入json
+    # Initialize basic information and write to json
     def init_json(self, basicinfo) -> dict:
         csv_reader = csv.reader(open(basicinfo, "r", encoding="UTF-8"))
 
@@ -53,12 +52,12 @@ class FontGlyph:
                 keys = row
                 continue
             
-            # 选择数据
+            # Select data
             if row[0] == self.__name:
                 data = dict(zip(keys, row))
                 break
 
-        # 对于 Outertale 的特殊处理
+        # Special processing for Outertale
         if data.get('shift_x') and data.get('shift_y'):
             data['shift'] = {"x": float(data.get('shift_x') or 0), "y": float(data.get('shift_y') or 0)}
             data.pop('shift_x')
@@ -66,46 +65,46 @@ class FontGlyph:
         
         data['size'] = int(data['size'])
 
-        # 准备绘制字图
+        # Prepare for drawing glyph image
         data['glyphs'] = []
 
         return data
 
-    # 初始化字体信息
+    # Initialize font information
     def init_fontconfig(self, glyphinfo : str) -> dict:
-        # 打开并读取JSON
+        # Open and read JSON
         with open(glyphinfo, "r", encoding="UTF-8") as file:
             fullcfg = json.load(file)
         
         for info in fullcfg:
             if info['name'] == self.__name:
-                # 04-01 更新：添加缺省值补全代码
+                # Update 04-01: Add default value completion code
                 result = info['glyph_info']
                 result = self.modify_glyphinfo(result)
                 return result
         
         return None
     
-    # 补全和设置字图信息中的缺省值
+    # Complete and set default values in glyph info
     def modify_glyphinfo(self, source : list) -> dict:
         cfglen = len(source)
         for it in range(cfglen):
             cfg = source[it]
 
-            # 04-03 优化：在这一步骤顺带读取字符总数，追加到对象的变量中
+            # Update 04-03: Read the total number of characters at this step, adding to the object's variable
             with open(cfg['charset'], "r", encoding="UTF-8") as file:
                 self.__charcount.append(len(file.read()))
                 
-            # 03-30 修正：添加像素字体选项
+            # Correction 03-30: Add pixel font option
             if 'pixel' not in cfg:
                 cfg['pixel'] = False
             if not 'threshold' in cfg or cfg['pixel']:
                 cfg['threshold'] = 0
             
-            # 04-01 Update: 全面取消 gap 参数
-            # 采用矩形拼接的想法：将每种字体的字符放在一个宽度和高度固定的矩形框中
-            # 矩形框的宽度和高度可手动指定，如果没有指定，则按照某一字符的endpoint指定
-            # 指定了矩形框大小后，再指定每一个字体的绘制高度起点（可以是负数）。
+            # Update 04-01: Completely cancel the gap parameter
+            # Rectangle stitching idea: put each type of font's characters in a rectangle with fixed width and height
+            # The rectangle's width and height can be specified manually, if not specified, it's set by the endpoint of a character
+            # After specifying the rectangle size, specify the drawing height start point for each font (can be negative).
             fontselect = ["A", "g", "赢"]
 
             optionalkeys = ['extrawidth', 'extraheight', "start_height", 'start_width']
@@ -113,7 +112,7 @@ class FontGlyph:
                 if keyname not in cfg:
                     cfg[keyname] = 0
 
-            # 字框大小设置
+            # Set the size of the character box
             font = ImageFont.truetype(cfg['fontfile'], cfg['size'])
             cfg['width'] = max([font.getbbox(ch)[2] for ch in fontselect]) + cfg['extrawidth']
             cfg['height'] = max([font.getbbox(ch)[3] for ch in fontselect]) + cfg['extraheight']
@@ -122,16 +121,16 @@ class FontGlyph:
             
         return source
 
-    # 04-03 更新：针对 spec_char 特定字符设定
+    # Update 04-03: Set up specific character settings for spec_char
     def get_font_config(self, currentchar : str, fontcfg : dict):
-        # 使用默认配置
+        # Use default configuration
         config = {
             'startpoint': [fontcfg['start_width'], fontcfg['start_height']],
             'width': fontcfg['width'],
             'height': fontcfg['height']
         }
 
-        # 根据字符调整配置
+        # Adjust configuration based on the character
         spec_chars = fontcfg.get('spec_char', {})
         if currentchar in spec_chars:
             spec = spec_chars[currentchar]
@@ -142,72 +141,72 @@ class FontGlyph:
 
         return config
     
-    # 绘制单个字体字图
+    # Draw a single font glyph
     def draw_singlefont(self, currentchar : str, fontcfg : dict, fallback : bool = False) -> tuple:
-        # 04-03 更新：分离 特殊字符处理和字符绘制的代码
+        # Update 04-03: Separate the special character handling and character drawing code
         config = self.get_font_config(currentchar, fontcfg)
         
         startpoint = config['startpoint']
         endpoint = (config['width'], config['height'])
 
-        # 初始化完毕，创建子图（二值图）
+        # Initialization complete, create a sub-image (binary image)
         imgtype = '1' if fontcfg['pixel'] else 'L'
         fontimg = Image.new(imgtype, endpoint)
 
-        # 绘制
+        # Draw
         drawtool = ImageDraw.Draw(fontimg)
         drawfont = self.__fbfont if fallback else self.__font
         
         drawtool.text(startpoint, currentchar, fill=255, font=drawfont)
 
-        # 缩放步骤可以省略，转换为透明图
+        # Skip scaling step, convert to transparent image
         fontimg = self.convert_pic(fontimg, fontcfg['threshold'], currentchar)
         return (fontimg, endpoint)
 
-    # 将生成的二值图透明化，转为含Alpha的灰度图
+    # Convert the binary image to an alpha-included grayscale image
     def convert_pic(self, fontimg : Image, threshold : int, currentchar : str) -> Image:
         fontimg_arr = np.asarray(fontimg)
         blankchr = [' ', '　']
 
-        # 04-03 Update：如果发现绘制的字图全空白且对应字符不是空格，则直接跳过转换，返回None
+        # Update 04-03: If the drawn glyph image is all blank and the corresponding character is not a space, skip conversion and return None
         if currentchar not in blankchr and np.all(fontimg_arr == 0):
             return None
         
         new_arr = np.empty((fontimg_arr.shape[0], fontimg_arr.shape[1], 2), np.uint8)
 
-        # 二值化
+        # Binarization
         new_arr[..., 1] = new_arr[..., 0] = (fontimg_arr>threshold)*255
 
-        # 转换回 Image 对象
+        # Convert back to Image object
         new_fontimg = Image.fromarray(new_arr, "LA")
         return new_fontimg
     
-    # 将字体添加到总字图上
+    # Add the font image to the main glyph image
     def add_fontimg(self, fontimg : Image, endpoint : tuple) -> None:
-        # 主要处理换行和字体偏移量
+        # Handle line breaks and font offsets
         (width, height) = endpoint
-        # 如果已经排到末尾，+1 是预留的间距
+        # If reaching the end of the line, +1 is a reserved gap
         if self.__x + width > self.pic_width:
-            # 移动到下一行开头
+            # Move to the beginning of the next line
             self.__x = 0
-            # 移动坐标
+            # Move coordinates
             self.__y += height
         
-        # 粘贴图片
+        # Paste image
         self.glyph.paste(fontimg, (self.__x, self.__y))
-        # 移动坐标
+        # Move coordinates
         self.__x += width
 
-    # 更新字体信息到JSON (for Outertale)
+    # Update font information in JSON (for Outertale)
     def update_fontimg_json(self, currentchar : str, endpoint: tuple) -> None:
         (width, height) = endpoint
         data = dict()
 
-        # 构建 outertale 接受的 JSON 数据
+        # Build JSON data accepted by Outertale
         data['area'] = {
             "x": self.__x - width,
             #"y": self.__y + startpoint[1],
-            # 03-30：高度修正
+            # Correction 03-30: Height correction
             "y": self.__y,
             "width": width,
             "height": height
@@ -221,43 +220,43 @@ class FontGlyph:
             "y": 0
         }
 
-        # 数据构建完成，在原JSON中添加这条glyph记录
+        # Data built, add this glyph record to the original JSON
         self.__jsonfile['glyphs'].append(data)
 
-    # 获取生成的json
+    # Get the generated json
     def get_fontimg_json(self) -> dict:
         return self.__jsonfile
     
-    # 04-03 Update：更新字体信息到csv (for GMS game, e.g. TS!Underswap)
+    # Update 04-03: Update font information in CSV (for GMS game, e.g. TS!Underswap)
     def update_fontimg_csv(self, currentchar : str, endpoint: tuple) -> None:
         (width, height) = endpoint
 
-        # 构建数据
+        # Build data
         data = [
-            ord(currentchar),   # 字符编码
-            self.__x - width, self.__y,  # 字图左上角坐标
-            width, height,      # 宽、高
-            width, 0            # 字距、偏移，之前已经调整，保持默认即可
+            ord(currentchar),   # Character encoding
+            self.__x - width, self.__y,  # Top-left corner of the glyph
+            width, height,      # Width, height
+            width, 0            # Letter spacing, offset, previously adjusted, keep default
         ]
 
-        # 数据构建完成，添加记录
+        # Data built, add record
         self.__csv.append(data)
 
-   # 04-03 Update：写入生成的csv到文件
+   # Update 04-03: Write the generated CSV to file
     def write_fontimg_csv(self, distpath : str) -> None:
         with open(distpath, "w", encoding="UTF-8", newline='') as file:
             writerobj = csv.writer(file)
             writerobj.writerows(self.__csv)
     
-    # 字图制作与导入task
+    # Glyph creation and import task
     def glyph_genetask(self) -> None:
-        # 初始化后：对于glyph_info的每个字体记录读取基本信息
+        # After initialization: Read basic information for each font record in glyph_info
         it = 0
         for cfg in self.__fontconfig:
-            # 对于字库中的每个字符：不断读取并发送给绘制程序
-            # 首先，对字体进行实例化
+            # For each character in the font library: Continuously send to the drawing program
+            # First, instantiate the font
             self.__font = ImageFont.truetype(cfg['fontfile'], cfg['size'])
-            # 04-03 更新：缺字时尝试调用缺省字体路径
+            # Update 04-03: Attempt to use the fallback font path when characters are missing
             if os.path.exists(self.__fbfontpath):
                 self.__fbfont = ImageFont.truetype(self.__fbfontpath, cfg['size'])  
             else:
@@ -265,52 +264,52 @@ class FontGlyph:
                 self.__fbfont = None
 
             with open(cfg['charset'], "r", encoding="UTF-8") as file:
-                # 获取字符集的字符个数
+                # Get the number of characters in the character set
                 # limit = len(file.read())
                 # file.seek(0, 0)
                 limit = self.__charcount[it]
 
                 for _ in range(limit):
                     ch = file.read(1)
-                    if ch == '\n':   # 跳过换行符
+                    if ch == '\n':   # Skip newline characters
                         continue
-                    # 首先，绘制单字字图
+                    # First, draw the single character glyph
                     fontimg, endpoint = self.draw_singlefont(ch, cfg)
-                    # 04-03 Update：如果发现空字图，说明当前字体缺少对应字符
+                    # Update 04-03: If an empty glyph is found, the current font lacks the corresponding character
                     if not fontimg:
-                        # 此时，尝试调用缺省字体文件
+                        # In this case, try to use the fallback font
                         if self.__fbfont:
-                            # 如果发现缺省字体，则用缺省字体重新绘制
+                            # If the fallback font is available, redraw using the fallback font
                             fontimg, endpoint = self.draw_singlefont(ch, cfg, fallback=True)
-                        else:   # 否则，直接跳过这一字体
+                        else:   # Otherwise, skip this font
                             continue
-                    # 随后，将单字添加到总的大字图
+                    # Next, add the single character to the main large glyph
                     self.add_fontimg(fontimg, endpoint)
-                    # 接着，更新JSON文件或CSV文件
+                    # Then, update the JSON file or CSV file
                     self.update_fontimg_json(ch, endpoint)
                     self.update_fontimg_csv(ch, endpoint)
-                it += 1     # 迭代指标
+                it += 1     # Iteration index
 
-            # 03-30 修正：完成一份字体配置后，进行换行准备下一字体集导入
+            # Correction 03-30: After completing a font configuration, prepare for the next font set import by moving to the next line
             self.__x = 0
             self.__y += cfg['height']
 
-    # 04-03 优化：保存生成的字图
+    # Optimization 04-03: Save the generated glyph
     def save_glyph(self, distpath : str) -> None:
         self.glyph.save(distpath)
 
-# 执行主程序
+# Execute the main program
 def main():
-    # 配置文件路径
+    # Configuration file paths
     csv_path = "font_info/basicinfo.csv"
     json_path = "font_info/glyphinfo.json"
 
-    # 输出路径
+    # Output path
     if os.path.exists("dist"):
         os.system('powershell "rm -r dist"')
     os.mkdir("dist")
 
-    # 字体名称
+    # Font names
     fontnamelist = ["ComicSans",
                 "CryptOfTomorrow",
                 "DeterminationMono",
@@ -322,17 +321,17 @@ def main():
     ]
     distjson = list()
 
-    # 生成字图和配置文件
+    # Generate glyphs and configuration files
     for name in fontnamelist:
         glyph = FontGlyph(name, json_path, csv_path,
-                          fallbackfont="fnt_zh-cn/unifont.otf", width=1024)    # 初始化字图对象
-        glyph.glyph_genetask()  # 生成字图
+                          fallbackfont="fnt_zh-cn/unifont.otf", width=1024)    # Initialize glyph object
+        glyph.glyph_genetask()  # Generate glyph
 
-        glyph.save_glyph(f"dist/{name}.png")          # 保存字图
-        distjson.append(glyph.get_fontimg_json())     # 写入JSON
-        #glyph.write_fontimg_csv(f"dist/glyphs_fnt_{name}.csv")  # 写入csv
+        glyph.save_glyph(f"dist/{name}.png")          # Save glyph
+        distjson.append(glyph.get_fontimg_json())     # Write JSON
+        #glyph.write_fontimg_csv(f"dist/glyphs_fnt_{name}.csv")  # Write csv
     
-    # 保存JSON文件
+    # Save JSON file
     with open(f"dist/index.json", "w", encoding="UTF-8") as json_file:
         json.dump(distjson, json_file, 
                   ensure_ascii=False, indent=4, separators=(", ", ": "))
