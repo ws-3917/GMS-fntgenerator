@@ -345,6 +345,9 @@
                     },
                     "w": {
                         "extrawidth": 3
+                    },
+                    ":": {
+                        "extrawidth": -6
                     }
                 }
             },
