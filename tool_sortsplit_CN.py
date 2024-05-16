@@ -1,6 +1,6 @@
 # sortsplit - 对字库内汉字进行分行和排序，用于合并字库时的预处理
 
-fnt_source = "font_info/char_cn.txt"    # 字体路径
+fnt_source = "font_info/char_en.txt"    # 字体路径
 # 读取文件
 ch_list = []
 with open(fnt_source, "r", encoding="utf-8") as file:
@@ -17,7 +17,7 @@ ch_list.sort()
 
 # 写回新文件，默认写入到source路径下_dest文件名
 # 如果要直接覆盖源文件，将 + :_dest.txt"去掉
-fnt_dest = fnt_source[:fnt_source.find(".txt")] + "_dest.txt"   
+fnt_dest = fnt_source[:fnt_source.find(".txt")] + ".txt"   
 ct = 0
 
 with open(fnt_dest, "w", encoding="utf-8") as file:

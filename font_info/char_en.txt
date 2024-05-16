@@ -1,2 +1,3 @@
- !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQR
-STUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~æ
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQ
+RSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÖÜßä
+æöü
