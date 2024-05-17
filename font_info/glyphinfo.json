@@ -161,6 +161,38 @@
                         "extrawidth": -9
                     }
                 }
+            },
+            {
+                "fontfile": "fnt_jp/JF-Dot-Shinonome12.ttf",
+                "charset": "font_info/char_jp.txt",
+                "size": 12,
+                "pixel": true,
+                "extrawidth": 3,
+                "extraheight": -1,
+                "spec_char": {
+                    "。": {
+                        "start_height": 2
+                    },
+                    "，": {
+                        "start_height": 2
+                    },
+                    "“": {
+                        "start_width": -4,
+                        "extrawidth": -5
+                    },
+                    "”": {
+                        "start_width": -2,
+                        "extrawidth": -5
+                    },
+                    "‘": {
+                        "start_width": -7,
+                        "extrawidth": -9
+                    },
+                    "’": {
+                        "start_width": -2,
+                        "extrawidth": -9
+                    }
+                }
             }
         ]
     },
@@ -254,6 +286,38 @@
                         "extrawidth": -9
                     }
                 }
+            },
+            {
+                "fontfile": "fnt_jp/JF-Dot-Shinonome12.ttf",
+                "charset": "font_info/char_jp.txt",
+                "size": 12,
+                "pixel": true,
+                "extrawidth": 2,
+                "extraheight": -1,
+                "spec_char": {
+                    "。": {
+                        "start_height": 2
+                    },
+                    "，": {
+                        "start_height": 2
+                    },
+                    "“": {
+                        "start_width": -4,
+                        "extrawidth": -5
+                    },
+                    "”": {
+                        "start_width": -2,
+                        "extrawidth": -5
+                    },
+                    "‘": {
+                        "start_width": -7,
+                        "extrawidth": -9
+                    },
+                    "’": {
+                        "start_width": -2,
+                        "extrawidth": -9
+                    }
+                }
             }
         ]
     },
@@ -315,6 +379,14 @@
             {
                 "fontfile": "fnt_zh-cn/fzxs14.ttf",
                 "charset": "font_info/char_cn.txt",
+                "size": 14,
+                "extrawidth": 6,
+                "start_height": 2,
+                "extraheight": 2
+            },
+            {
+                "fontfile": "fnt_jp/JF-Dot-Shinonome14.ttf",
+                "charset": "font_info/char_jp.txt",
                 "size": 14,
                 "extrawidth": 6,
                 "start_height": 2,

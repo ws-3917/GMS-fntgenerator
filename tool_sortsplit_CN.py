@@ -1,6 +1,6 @@
 # sortsplit - 对字库内汉字进行分行和排序，用于合并字库时的预处理
 
-fnt_source = "font_info/char_en.txt"    # 字体路径
+fnt_source = "font_info/char_jp.txt"    # 字体路径
 # 读取文件
 ch_list = []
 with open(fnt_source, "r", encoding="utf-8") as file:
