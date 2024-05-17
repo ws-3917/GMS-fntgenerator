@@ -131,12 +131,13 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
-                "charset": "font_info/char_cn.txt",
+                "fontfile": "fnt_jp/JF-Dot-Shinonome12.ttf",
+                "charset": "font_info/char_jp.txt",
                 "size": 12,
                 "pixel": true,
                 "extrawidth": 3,
                 "extraheight": -1,
+                "start_height": -1,
                 "spec_char": {
                     "。": {
                         "start_height": 2
@@ -163,8 +164,8 @@
                 }
             },
             {
-                "fontfile": "fnt_jp/JF-Dot-Shinonome12.ttf",
-                "charset": "font_info/char_jp.txt",
+                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
+                "charset": "font_info/char_cn.txt",
                 "size": 12,
                 "pixel": true,
                 "extrawidth": 3,
@@ -256,12 +257,13 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
-                "charset": "font_info/char_cn.txt",
+                "fontfile": "fnt_jp/JF-Dot-Shinonome12.ttf",
+                "charset": "font_info/char_jp.txt",
                 "size": 12,
                 "pixel": true,
                 "extrawidth": 2,
                 "extraheight": -1,
+                "start_height": -1,
                 "spec_char": {
                     "。": {
                         "start_height": 2
@@ -288,8 +290,8 @@
                 }
             },
             {
-                "fontfile": "fnt_jp/JF-Dot-Shinonome12.ttf",
-                "charset": "font_info/char_jp.txt",
+                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
+                "charset": "font_info/char_cn.txt",
                 "size": 12,
                 "pixel": true,
                 "extrawidth": 2,
@@ -377,16 +379,16 @@
                 "extraheight": 2
             },
             {
-                "fontfile": "fnt_zh-cn/fzxs14.ttf",
-                "charset": "font_info/char_cn.txt",
+                "fontfile": "fnt_jp/JF-Dot-Shinonome14.ttf",
+                "charset": "font_info/char_jp.txt",
                 "size": 14,
                 "extrawidth": 6,
                 "start_height": 2,
                 "extraheight": 2
             },
             {
-                "fontfile": "fnt_jp/JF-Dot-Shinonome14.ttf",
-                "charset": "font_info/char_jp.txt",
+                "fontfile": "fnt_zh-cn/fzxs14.ttf",
+                "charset": "font_info/char_cn.txt",
                 "size": 14,
                 "extrawidth": 6,
                 "start_height": 2,
