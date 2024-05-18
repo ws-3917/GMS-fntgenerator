@@ -426,9 +426,9 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/ChillBitmap9x.ttf",
+                "fontfile": "fnt_zh-cn/DinkieBitmap-9pxDemo.ttf",
                 "charset": "font_info/char_cn.txt",
-                "size": 18,
+                "size": 20,
                 "pixel": true,
                 "start_height": 0,
                 "extraheight": 0
