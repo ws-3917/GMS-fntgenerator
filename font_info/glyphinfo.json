@@ -426,12 +426,12 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/ChillBitmap7x.ttf",
+                "fontfile": "fnt_zh-cn/ChillBitmap9x.ttf",
                 "charset": "font_info/char_cn.txt",
-                "size": 16,
+                "size": 18,
                 "pixel": true,
-                "start_height": 2,
-                "extraheight": 2
+                "start_height": 0,
+                "extraheight": 0
             }
         ]
     },
