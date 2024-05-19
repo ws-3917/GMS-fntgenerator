@@ -361,9 +361,11 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/ChillBitmap7x.ttf",
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh-cn.otf",
                 "charset": "font_info/char_cn.txt",
-                "size": 16
+                "pixel": true,
+                "size": 16,
+                "start_height": -1
             }
         ]
     },
@@ -426,11 +428,11 @@
                 }
             },
             {
-                "fontfile": "fnt_zh-cn/DinkieBitmap-9pxDemo.ttf",
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh-cn.otf",
                 "charset": "font_info/char_cn.txt",
-                "size": 20,
+                "size": 16,
                 "pixel": true,
-                "start_height": 0,
+                "start_height": -1,
                 "extraheight": 0
             }
         ]
