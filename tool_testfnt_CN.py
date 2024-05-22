@@ -5,9 +5,9 @@ import numpy as np
 
 # 字体路径、待显示字符、字体大小、绘图类型
 # '1'代表二值图（黑白），'L'代表灰度图
-fontfile = "fnt_en/determination-mono.woff"   
-ch = "æ"
-size = 16
+fontfile = "fnt_zh-cn/MiuiBitmap-Regular.ttf"   
+ch = "派羹"
+size = 12
 glyphtype = 'L'
 threshold = 160     # 二值化阈值
 
