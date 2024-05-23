@@ -306,7 +306,7 @@ def main():
 
     # Output path
     if os.path.exists("dist"):
-        os.system('powershell "rm -r dist"')
+        os.system('rm -r dist')
     os.mkdir("dist")
 
     # Font names

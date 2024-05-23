@@ -5,3 +5,6 @@
 /releases
 
 /.vscode
+
+/lib
+/fnt_venv
