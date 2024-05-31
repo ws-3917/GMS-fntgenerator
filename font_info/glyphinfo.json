@@ -115,13 +115,15 @@
                 "fontfile": "fnt_jp/fusion-pixel-8px-ja.otf",
                 "charset": "font_info/char_jp.txt",
                 "pixel": true,
-                "size": 8
+                "size": 8,
+                "start_height": -1
             },
             {
                 "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh-cn.otf",
                 "charset": "font_info/char_cn.txt",
                 "pixel": true,
-                "size": 8
+                "size": 8,
+                "start_height": -1
             }
         ]
     },
