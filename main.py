@@ -101,7 +101,9 @@ class FontGlyph:
                 cfg['pixel'] = False
             if not 'threshold' in cfg or cfg['pixel']:
                 cfg['threshold'] = 0
-            
+
+            if 'fallback' not in cfg:
+                cfg['fallback'] = self.__fbfontpath
             # 04-01 Update: 全面取消 gap 参数
             # 采用矩形拼接的想法：将每种字体的字符放在一个宽度和高度固定的矩形框中
             # 矩形框的宽度和高度可手动指定，如果没有指定，则按照某一字符的endpoint指定
@@ -258,8 +260,8 @@ class FontGlyph:
             # 首先，对字体进行实例化
             self.__font = ImageFont.truetype(cfg['fontfile'], cfg['size'])
             # 04-03 更新：缺字时尝试调用缺省字体路径
-            if os.path.exists(self.__fbfontpath):
-                self.__fbfont = ImageFont.truetype(self.__fbfontpath, cfg['size'])  
+            if os.path.exists(cfg['fallback']):
+                self.__fbfont = ImageFont.truetype(cfg['fallback'], cfg['size'])  
             else:
                 print("WARNING: fallback font not found.")
                 self.__fbfont = None
@@ -282,6 +284,8 @@ class FontGlyph:
                         if self.__fbfont:
                             # 如果发现缺省字体，则用缺省字体重新绘制
                             fontimg, endpoint = self.draw_singlefont(ch, cfg, fallback=True)
+                            if not fontimg: # 如果还是画不出来，跳过
+                                continue
                         else:   # 否则，直接跳过这一字体
                             continue
                     # 随后，将单字添加到总的大字图

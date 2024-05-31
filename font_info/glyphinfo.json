@@ -81,6 +81,16 @@
                 }
             },
             {
+                "fontfile": "fnt_jp/HAPPYRUIKAKYOHKAN-07.TTF",
+                "charset": "font_info/char_jp.txt",
+                "size": 16,
+                "extraheight": 0,
+                "start_height": 0,
+                "extrawidth": 1,
+                "threshold": 220,
+                "fallback": "fnt_zh-cn/fzse_GBK.ttf"
+            },
+            {
                 "fontfile": "fnt_zh-cn/fzse_GBK.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 16,
@@ -102,8 +112,15 @@
                 "extraheight": 1
             },
             {
-                "fontfile": "fnt_zh-cn/ChillBitmap7x.ttf",
+                "fontfile": "fnt_jp/fusion-pixel-8px-ja.otf",
+                "charset": "font_info/char_jp.txt",
+                "pixel": true,
+                "size": 8
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh-cn.otf",
                 "charset": "font_info/char_cn.txt",
+                "pixel": true,
                 "size": 8
             }
         ]
@@ -361,6 +378,13 @@
                 }
             },
             {
+                "fontfile": "fnt_jp/fusion-pixel-8px-ja.otf",
+                "charset": "font_info/char_jp.txt",
+                "pixel": true,
+                "size": 16,
+                "start_height": -1
+            },
+            {
                 "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh-cn.otf",
                 "charset": "font_info/char_cn.txt",
                 "pixel": true,
@@ -381,12 +405,13 @@
                 "extraheight": 2
             },
             {
-                "fontfile": "fnt_jp/JF-Dot-Shinonome14.ttf",
+                "fontfile": "fnt_jp/FOT-UDKAKUGOC80PRO-M.OTF",
                 "charset": "font_info/char_jp.txt",
-                "size": 14,
-                "extrawidth": 6,
+                "size": 16,
+                "extrawidth": 4,
                 "start_height": 2,
-                "extraheight": 2
+                "extraheight": 2,
+                "threshold": 160
             },
             {
                 "fontfile": "fnt_zh-cn/fzxs14.ttf",
@@ -394,7 +419,8 @@
                 "size": 14,
                 "extrawidth": 6,
                 "start_height": 2,
-                "extraheight": 2
+                "extraheight": 2,
+                "threshold": 120
             }
         ]
     },
@@ -428,10 +454,18 @@
                 }
             },
             {
+                "fontfile": "fnt_jp/fusion-pixel-8px-ja.otf",
+                "charset": "font_info/char_jp.txt",
+                "pixel": true,
+                "size": 16,
+                "start_height": -1,
+                "extraheight": 0
+            },
+            {
                 "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh-cn.otf",
                 "charset": "font_info/char_cn.txt",
-                "size": 16,
                 "pixel": true,
+                "size": 16,
                 "start_height": -1,
                 "extraheight": 0
             }
@@ -472,12 +506,22 @@
                 }
             },
             {
+                "fontfile": "fnt_jp/TANUKIMAGIC-2.TTF",
+                "charset": "font_info/char_jp.txt",
+                "size": 17,
+                "threshold": 110,
+                "extrawidth": 1,
+                "extraheight": 0,
+                "start_height": 0
+            },
+            {
                 "fontfile": "fnt_zh-cn/fzkt_GBK.ttf",
                 "charset": "font_info/char_cn.txt",
                 "size": 18,
-                "threshold": 160,
+                "threshold": 155,
                 "extraheight": -2,
-                "start_height": -2
+                "start_height": -2,
+                "fallback": "fnt_zh-cn/fzkt_GBK.ttf"
             }
         ]
     }
