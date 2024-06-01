@@ -77,6 +77,12 @@
                     },
                     "d": {
                         "extrawidth": 0
+                    },
+                    "$": {
+                        "extrawidth": 1
+                    },
+                    "&": {
+                        "extrawidth": 2
                     }
                 }
             },
