@@ -306,7 +306,7 @@ class FontGlyph:
 # 执行主程序
 def main():
     # 配置文件路径
-    LANG = 'ja_JP'
+    LANG = 'zh_TW'
     csv_path = "font_info/basicinfo.csv"
     json_path = f"font_info/glyphinfo_{LANG}.json"
 
