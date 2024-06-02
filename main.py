@@ -279,12 +279,12 @@ class FontGlyph:
                     # 首先，绘制单字字图
                     fontimg, endpoint = self.draw_singlefont(ch, cfg)
                     # 04-03 Update：如果发现空字图，说明当前字体缺少对应字符
-                    if not fontimg:
+                    if not fontimg or fontimg == self.draw_singlefont('𘏚', cfg)[0]:
                         # 此时，尝试调用缺省字体文件
                         if self.__fbfont:
                             # 如果发现缺省字体，则用缺省字体重新绘制
                             fontimg, endpoint = self.draw_singlefont(ch, cfg, fallback=True)
-                            if not fontimg: # 如果还是画不出来，跳过
+                            if not fontimg or fontimg == self.draw_singlefont('𘏚', cfg, fallback=True)[0]: # 如果还是画不出来，跳过
                                 continue
                         else:   # 否则，直接跳过这一字体
                             continue
@@ -306,13 +306,13 @@ class FontGlyph:
 # 执行主程序
 def main():
     # 配置文件路径
+    LANG = 'zh_tw'
     csv_path = "font_info/basicinfo.csv"
-    json_path = "font_info/glyphinfo.json"
+    json_path = f"font_info/glyphinfo_{LANG}.json"
 
     # 输出路径
-    if os.path.exists("dist"):
-        os.system('rm -r dist')
-    os.mkdir("dist")
+    os.system(f"rm -rf dist/{LANG} && mkdir -p dist/{LANG}")
+    
 
     # 字体名称
     fontnamelist = ["ComicSans",
@@ -329,15 +329,15 @@ def main():
     # 生成字图和配置文件
     for name in fontnamelist:
         glyph = FontGlyph(name, json_path, csv_path,
-                          fallbackfont="fnt_zh-cn/unifont.otf", width=1024)    # 初始化字图对象
+                          fallbackfont="fnt_zh-cn/ChillBitmap_16px.otf", width=1024)    # 初始化字图对象
         glyph.glyph_genetask()  # 生成字图
 
-        glyph.save_glyph(f"dist/{name}.png")          # 保存字图
+        glyph.save_glyph(f"dist/{LANG}/{name}.png")          # 保存字图
         distjson.append(glyph.get_fontimg_json())     # 写入JSON
         #glyph.write_fontimg_csv(f"dist/glyphs_fnt_{name}.csv")  # 写入csv
     
     # 保存JSON文件
-    with open(f"dist/index.json", "w", encoding="UTF-8") as json_file:
+    with open(f"dist/{LANG}/index.json", "w", encoding="UTF-8") as json_file:
         json.dump(distjson, json_file, 
                   ensure_ascii=False, indent=4, separators=(", ", ": "))
     
