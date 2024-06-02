@@ -309,6 +309,7 @@
             },
             {
                 "fontfile": "fnt_jp/fusion-pixel-8px-ja.ttf",
+                "fallback": "fnt_jp/fusion-pixel-8px-ja.ttf",
                 "charset": "font_info/char_jp.txt",
                 "threshold": 80,
                 "size": 16,
@@ -370,6 +371,7 @@
             },
             {
                 "fontfile": "fnt_jp/fusion-pixel-8px-ja.ttf",
+                "fallback": "fnt_jp/fusion-pixel-8px-ja.ttf",
                 "charset": "font_info/char_jp.txt",
                 "threshold": 80,
                 "size": 16,

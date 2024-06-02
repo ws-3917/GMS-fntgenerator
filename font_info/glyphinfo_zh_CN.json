@@ -305,6 +305,7 @@
             },
             {
                 "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
                 "charset": "font_info/char_cn.txt",
                 "threshold": 80,
                 "size": 16,
@@ -365,6 +366,7 @@
             },
             {
                 "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
                 "charset": "font_info/char_cn.txt",
                 "threshold": 80,
                 "size": 16,
