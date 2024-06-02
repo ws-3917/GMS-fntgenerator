@@ -1,0 +1,792 @@
+[
+    {
+        "name": "sans",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/comicsans-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 16,
+                "extrawidth": -1,
+                "extraheight": -1,
+                "start_height": -1,
+                "spec_char": {
+                    "i": {
+                        "start_width": 1,
+                        "extrawidth": -3
+                    },
+                    "l": {
+                        "start_width": 1,
+                        "extrawidth": -3
+                    },
+                    "m": {
+                        "extrawidth": 1
+                    },
+                    "w": {
+                        "extrawidth": 1
+                    },
+                    "@": {
+                        "extrawidth": 2
+                    },
+                    "A": {
+                        "extrawidth": 1
+                    },
+                    "C": {
+                        "extrawidth": 1
+                    },
+                    "G": {
+                        "extrawidth": 2
+                    },
+                    "H": {
+                        "extrawidth": 1
+                    },
+                    "M": {
+                        "extrawidth": 3
+                    },
+                    "N": {
+                        "extrawidth": 2
+                    },
+                    "O": {
+                        "extrawidth": 3
+                    },
+                    "P": {
+                        "extrawidth": -1
+                    },
+                    "Q": {
+                        "extrawidth": 4
+                    },
+                    "T": {
+                        "extrawidth": 1
+                    },
+                    "U": {
+                        "extrawidth": 1
+                    },
+                    "V": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 4
+                    },
+                    "X": {
+                        "extrawidth": 2
+                    },
+                    "Y": {
+                        "extrawidth": 1
+                    },
+                    "Z": {
+                        "extrawidth": 1
+                    },
+                    "d": {
+                        "extrawidth": 0
+                    },
+                    "$": {
+                        "extrawidth": 1
+                    },
+                    "&": {
+                        "extrawidth": 2
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fzse_GBK.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 16,
+                "extraheight": -4,
+                "start_height": -2,
+                "extrawidth": 1,
+                "threshold": 160,
+                "fallback": "fnt_zh-cn/fzse_GBK.ttf"
+            }
+        ]
+    },
+    {
+        "name": "crypt",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/crypt.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 5,
+                "start_height": 1,
+                "extraheight": 1
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "charset": "font_info/char_cn.txt",
+                "threshold": 80,
+                "size": 8,
+                "start_height": -1
+            }
+        ]
+    },
+    {
+        "name": "main",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/8bitoperator.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 32,
+                "extrawidth": -1,
+                "extraheight": -2,
+                "start_height": -2,
+                "spec_char": {
+                    ":": {
+                        "start_width": 2
+                    },
+                    "(": {
+                        "start_width": 2
+                    },
+                    "[": {
+                        "start_width": 2
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 24,
+                "pixel": true,
+                "extrawidth": 3,
+                "extraheight": -1,
+                "spec_char": {
+                    "。": {
+                        "start_height": 2
+                    },
+                    "，": {
+                        "start_height": 2
+                    },
+                    "“": {
+                        "start_width": -4,
+                        "extrawidth": -5
+                    },
+                    "”": {
+                        "start_width": -2,
+                        "extrawidth": -5
+                    },
+                    "‘": {
+                        "start_width": -7,
+                        "extrawidth": -9
+                    },
+                    "’": {
+                        "start_width": -2,
+                        "extrawidth": -9
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "name": "mainsm",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/8bitoperator.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 16,
+                "extrawidth": -2,
+                "extraheight": -2,
+                "start_height": -2,
+                "spec_char": {
+                    " ": {
+                        "extrawidth": -3
+                    },
+                    ":": {
+                        "extrawidth": -2,
+                        "start_width": 1
+                    },
+                    "(": {
+                        "extrawidth": -2
+                    },
+                    "[": {
+                        "extrawidth": -2
+                    },
+                    "]": {
+                        "extrawidth": -2
+                    },
+                    ")": {
+                        "extrawidth": -2
+                    },
+                    "{": {
+                        "extrawidth": -2
+                    },
+                    "}": {
+                        "extrawidth": -2
+                    },
+                    "m": {
+                        "extrawidth": 1
+                    },
+                    "w": {
+                        "extrawidth": 1
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "%": {
+                        "extrawidth": 1
+                    },
+                    "#": {
+                        "extrawidth": 1
+                    },
+                    "*": {
+                        "extrawidth": 1
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 12,
+                "pixel": true,
+                "extrawidth": 2,
+                "extraheight": -1,
+                "spec_char": {
+                    "。": {
+                        "start_height": 2
+                    },
+                    "，": {
+                        "start_height": 2
+                    },
+                    "“": {
+                        "start_width": -4,
+                        "extrawidth": -5
+                    },
+                    "”": {
+                        "start_width": -2,
+                        "extrawidth": -5
+                    },
+                    "‘": {
+                        "start_width": -7,
+                        "extrawidth": -9
+                    },
+                    "’": {
+                        "start_width": -2,
+                        "extrawidth": -9
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "name": "mainsc",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/8bitoperator.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 16,
+                "extrawidth": -2,
+                "extraheight": -2,
+                "start_height": -2,
+                "spec_char": {
+                    " ": {
+                        "extrawidth": -3
+                    },
+                    ":": {
+                        "extrawidth": -2,
+                        "start_width": 1
+                    },
+                    "(": {
+                        "extrawidth": -2
+                    },
+                    "[": {
+                        "extrawidth": -2
+                    },
+                    "]": {
+                        "extrawidth": -2
+                    },
+                    ")": {
+                        "extrawidth": -2
+                    },
+                    "{": {
+                        "extrawidth": -2
+                    },
+                    "}": {
+                        "extrawidth": -2
+                    },
+                    "m": {
+                        "extrawidth": 1
+                    },
+                    "w": {
+                        "extrawidth": 1
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "%": {
+                        "extrawidth": 1
+                    },
+                    "#": {
+                        "extrawidth": 1
+                    },
+                    "*": {
+                        "extrawidth": 1
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/MiuiBitmap-Regular.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 12,
+                "pixel": true,
+                "extrawidth": 2,
+                "extraheight": -1,
+                "spec_char": {
+                    "。": {
+                        "start_height": 2
+                    },
+                    "，": {
+                        "start_height": 2
+                    },
+                    "“": {
+                        "start_width": -4,
+                        "extrawidth": -5
+                    },
+                    "”": {
+                        "start_width": -2,
+                        "extrawidth": -5
+                    },
+                    "‘": {
+                        "start_width": -7,
+                        "extrawidth": -9
+                    },
+                    "’": {
+                        "start_width": -2,
+                        "extrawidth": -9
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "name": "dotumche_alt",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
+                "charset": "font_info/char_en.txt",
+                "size": 18,
+                "spec_char": {
+                    "1": {
+                        "extrawidth": -1
+                    },
+                    "I": {
+                        "extrawidth": -2
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "N": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "i": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    "l": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    ".": {
+                        "start_width": 2,
+                        "extrawidth": -2
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "charset": "font_info/char_cn.txt",
+                "threshold": 80,
+                "size": 16,
+                "start_height": -1
+            }
+        ]
+    },
+    {
+        "name": "dotumche_lg_alt",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
+                "charset": "font_info/char_en.txt",
+                "size": 18,
+                "spec_char": {
+                    "1": {
+                        "extrawidth": -1
+                    },
+                    "I": {
+                        "extrawidth": -2
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "N": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "i": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    "l": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    ".": {
+                        "start_width": 2,
+                        "extrawidth": -2
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "charset": "font_info/char_cn.txt",
+                "threshold": 80,
+                "size": 16,
+                "start_height": -1
+            }
+        ]
+    },
+    {
+        "name": "dotumche_sm_alt",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
+                "charset": "font_info/char_en.txt",
+                "size": 18,
+                "spec_char": {
+                    "1": {
+                        "extrawidth": -1
+                    },
+                    "I": {
+                        "extrawidth": -2
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "N": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "i": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    "l": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    ".": {
+                        "start_width": 2,
+                        "extrawidth": -2
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "charset": "font_info/char_cn.txt",
+                "threshold": 80,
+                "size": 16,
+                "start_height": -1
+            }
+        ]
+    },
+    {
+        "name": "dotumche_md_alt",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
+                "charset": "font_info/char_en.txt",
+                "size": 18,
+                "spec_char": {
+                    "1": {
+                        "extrawidth": -1
+                    },
+                    "I": {
+                        "extrawidth": -2
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "N": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "i": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    "l": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    ".": {
+                        "start_width": 2,
+                        "extrawidth": -2
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "charset": "font_info/char_cn.txt",
+                "threshold": 80,
+                "size": 16,
+                "start_height": -1
+            }
+        ]
+    },
+    {
+        "name": "dotumche_mdlg_alt",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/DiaryOfAn8BitMage.otf",
+                "charset": "font_info/char_en.txt",
+                "size": 18,
+                "spec_char": {
+                    "1": {
+                        "extrawidth": -1
+                    },
+                    "I": {
+                        "extrawidth": -2
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "N": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    },
+                    "i": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    "l": {
+                        "extrawidth": -3,
+                        "start_width": 1
+                    },
+                    ".": {
+                        "start_width": 2,
+                        "extrawidth": -2
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "charset": "font_info/char_cn.txt",
+                "threshold": 80,
+                "size": 16,
+                "start_height": -1
+            }
+        ]
+    },
+    {
+        "name": "dotumche",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/dotumche-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 13,
+                "start_height": 2,
+                "extrawidth": 3,
+                "extraheight": 2
+            },
+            {
+                "fontfile": "fnt_zh-cn/fzxs14.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 14,
+                "extrawidth": 6,
+                "start_height": 2,
+                "extraheight": 2,
+                "threshold": 120
+            }
+        ]
+    },
+    {
+        "name": "dotumche_md",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/dotumche-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 13,
+                "start_height": 2,
+                "extrawidth": 3,
+                "extraheight": 2
+            },
+            {
+                "fontfile": "fnt_zh-cn/fzxs14.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 14,
+                "extrawidth": 6,
+                "start_height": 2,
+                "extraheight": 2,
+                "threshold": 120
+            }
+        ]
+    },
+    {
+        "name": "dotumche_mdlg",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/dotumche-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 13,
+                "start_height": 2,
+                "extrawidth": 3,
+                "extraheight": 2
+            },
+            {
+                "fontfile": "fnt_zh-cn/fzxs14.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 14,
+                "extrawidth": 6,
+                "start_height": 2,
+                "extraheight": 2,
+                "threshold": 120
+            }
+        ]
+    },
+    {
+        "name": "dotumche_lg",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/dotumche-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 13,
+                "start_height": 2,
+                "extrawidth": 3,
+                "extraheight": 2
+            },
+            {
+                "fontfile": "fnt_zh-cn/fzxs14.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 14,
+                "extrawidth": 6,
+                "start_height": 2,
+                "extraheight": 2,
+                "threshold": 120
+            }
+        ]
+    },
+    {
+        "name": "dotumche_sm",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/dotumche-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 13,
+                "start_height": 2,
+                "extrawidth": 3,
+                "extraheight": 2
+            },
+            {
+                "fontfile": "fnt_zh-cn/fzxs14.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 14,
+                "extrawidth": 6,
+                "start_height": 2,
+                "extraheight": 2,
+                "threshold": 120
+            }
+        ]
+    },
+    {
+        "name": "mars",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/mars-px.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 24,
+                "start_height": -2,
+                "spec_char": {
+                    " ": {
+                        "extrawidth": -4
+                    },
+                    "M": {
+                        "extrawidth": 3
+                    },
+                    "W": {
+                        "extrawidth": 3
+                    },
+                    "m": {
+                        "extrawidth": 3
+                    },
+                    "w": {
+                        "extrawidth": 3
+                    },
+                    ":": {
+                        "extrawidth": -6
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "fallback": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
+                "charset": "font_info/char_cn.txt",
+                "threshold": 80,
+                "size": 16,
+                "start_height": -1,
+                "extraheight": 0
+            }
+        ]
+    },
+    {
+        "name": "papyrus",
+        "glyph_info": [
+            {
+                "fontfile": "fnt_en/papyrus-px_alt.ttf",
+                "charset": "font_info/char_en.txt",
+                "size": 16,
+                "extraheight": 2,
+                "start_height": 2,
+                "spec_char": {
+                    "I": {
+                        "start_height": -1,
+                        "extrawidth": -3
+                    },
+                    "B": {
+                        "extrawidth": 1
+                    },
+                    "D": {
+                        "extrawidth": 1
+                    },
+                    "G": {
+                        "extrawidth": 1
+                    },
+                    "M": {
+                        "extrawidth": 1
+                    },
+                    "S": {
+                        "extrawidth": 1
+                    },
+                    "W": {
+                        "extrawidth": 1
+                    }
+                }
+            },
+            {
+                "fontfile": "fnt_zh-cn/fzkt_GBK.ttf",
+                "charset": "font_info/char_cn.txt",
+                "size": 18,
+                "threshold": 155,
+                "extraheight": -2,
+                "start_height": -2,
+                "fallback": "fnt_zh-cn/fzkt_GBK.ttf"
+            }
+        ]
+    }
+]
