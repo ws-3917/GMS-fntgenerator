@@ -237,9 +237,9 @@ class FontGlyph:
         # 构建数据
         data = [
             ord(currentchar),   # 字符编码
-            self.__x - width, self.__y,  # 字图左上角坐标
-            width, height,      # 宽、高
-            width, 0            # 字距、偏移，之前已经调整，保持默认即可
+            self.__x - width + 1, self.__y + 1,  # 字图左上角坐标
+            width - 2, height - 2,      # 宽、高
+            width - 2, 0            # 字距、偏移，之前已经调整，保持默认即可
         ]
 
         # 数据构建完成，添加记录
@@ -248,7 +248,7 @@ class FontGlyph:
    # 04-03 Update：写入生成的csv到文件
     def write_fontimg_csv(self, distpath : str) -> None:
         with open(distpath, "w", encoding="UTF-8", newline='') as file:
-            writerobj = csv.writer(file)
+            writerobj = csv.writer(file, delimiter=';', quoting=csv.QUOTE_STRINGS)
             writerobj.writerows(self.__csv)
     
     # 字图制作与导入task
@@ -326,23 +326,24 @@ def main():
     #             "Papyrus"
     # ]
     # tsus
-    fontnamelist = ["dotumche_alt",
-                "dotumche_lg_alt",
-                "dotumche_sm_alt",
-                "dotumche_md_alt",
-                "dotumche_mdlg_alt",
-                "dotumche",
-                "dotumche_lg",
-                "dotumche_sm",
-                "dotumche_md",
-                "dotumche_mdlg",
-                "main",
-                "mainsm",
-                "mainsc",
-                "papyrus",
-                "sans",
-                "crypt",
-                "mars"
+    fontnamelist = [
+            "dotumche_alt",
+            "dotumche_lg_alt",
+            "dotumche_sm_alt",
+            "dotumche_md_alt",
+            "dotumche_mdlg_alt",
+            "dotumche",
+            "dotumche_lg",
+            "dotumche_sm",
+            "dotumche_md",
+            "dotumche_mdlg",
+            "main",
+            "mainsm",
+            "mainsc",
+            "papyrus",
+            "sans",
+            "crypt",
+            "mars"
     ]
     distjson = list()
 
@@ -352,11 +353,15 @@ def main():
                           fallbackfont="fnt_zh-cn/ChillBitmap_16px.otf", width=2048)    # 初始化字图对象
         glyph.glyph_genetask()  # 生成字图
 
-        glyph.save_glyph(f"dist/{LANG}/{name}.png")          # 保存字图
-        #distjson.append(glyph.get_fontimg_json())     # 写入JSON
+        # tsus
+        glyph.save_glyph(f"dist/{LANG}/fnt_{name}.png")          # 保存字图
         glyph.write_fontimg_csv(f"dist/{LANG}/glyphs_fnt_{name}.csv")  # 写入csv
+
+        # psot
+        #glyph.save_glyph(f"dist/{LANG}/{name}.png")          # 保存字图
+        #distjson.append(glyph.get_fontimg_json())     # 写入JSON
     
-    # 保存JSON文件
+    # psot: 保存JSON文件
     # with open(f"dist/{LANG}/index.json", "w", encoding="UTF-8") as json_file:
     #     json.dump(distjson, json_file, 
     #               ensure_ascii=False, indent=4, separators=(", ", ": "))

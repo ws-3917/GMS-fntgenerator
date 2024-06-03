@@ -6,7 +6,7 @@
                 "fontfile": "fnt_en/comicsans-px.ttf",
                 "charset": "font_info/char_en.txt",
                 "size": 16,
-                "extrawidth": -1,
+                "extrawidth": -2,
                 "extraheight": -1,
                 "start_height": -1,
                 "spec_char": {
@@ -92,7 +92,7 @@
                 "size": 16,
                 "extraheight": -4,
                 "start_height": -2,
-                "extrawidth": 1,
+                "extrawidth": 9,
                 "threshold": 160,
                 "fallback": "fnt_zh-cn/fzse_GBK.ttf"
             }
@@ -104,15 +104,16 @@
             {
                 "fontfile": "fnt_en/crypt.ttf",
                 "charset": "font_info/char_en.txt",
-                "size": 5,
+                "size": 10,
                 "start_height": 1,
-                "extraheight": 1
+                "extraheight": 1,
+                "extrawidth": 2
             },
             {
                 "fontfile": "fnt_zh-cn/fusion-pixel-8px-zh_hans.ttf",
                 "charset": "font_info/char_cn.txt",
                 "threshold": 80,
-                "size": 8,
+                "size": 16,
                 "start_height": -1
             }
         ]
@@ -124,7 +125,7 @@
                 "fontfile": "fnt_en/8bitoperator.ttf",
                 "charset": "font_info/char_en.txt",
                 "size": 32,
-                "extrawidth": -1,
+                "extrawidth": -2,
                 "extraheight": -2,
                 "start_height": -2,
                 "spec_char": {
@@ -144,8 +145,9 @@
                 "charset": "font_info/char_cn.txt",
                 "size": 24,
                 "pixel": true,
-                "extrawidth": 3,
-                "extraheight": -1,
+                "extrawidth": 6,
+                "extraheight": 1,
+                "start_height": 2,
                 "spec_char": {
                     "。": {
                         "start_height": 2
@@ -180,7 +182,7 @@
                 "fontfile": "fnt_en/8bitoperator.ttf",
                 "charset": "font_info/char_en.txt",
                 "size": 16,
-                "extrawidth": -2,
+                "extrawidth": 0,
                 "extraheight": -2,
                 "start_height": -2,
                 "spec_char": {
@@ -237,7 +239,7 @@
                 "charset": "font_info/char_cn.txt",
                 "size": 12,
                 "pixel": true,
-                "extrawidth": 2,
+                "extrawidth": 8,
                 "extraheight": -1,
                 "spec_char": {
                     "。": {
@@ -273,7 +275,7 @@
                 "fontfile": "fnt_en/8bitoperator.ttf",
                 "charset": "font_info/char_en.txt",
                 "size": 16,
-                "extrawidth": -2,
+                "extrawidth": 0,
                 "extraheight": -2,
                 "start_height": -2,
                 "spec_char": {
@@ -330,7 +332,7 @@
                 "charset": "font_info/char_cn.txt",
                 "size": 12,
                 "pixel": true,
-                "extrawidth": 2,
+                "extrawidth": 8,
                 "extraheight": -1,
                 "spec_char": {
                     "。": {
@@ -402,7 +404,9 @@
                 "charset": "font_info/char_cn.txt",
                 "threshold": 80,
                 "size": 16,
-                "start_height": -1
+                "start_height": -1,
+                "start_width": 2,
+                "extra_width": 2
             }
         ]
     },
@@ -711,7 +715,8 @@
                 "fontfile": "fnt_en/mars-px.ttf",
                 "charset": "font_info/char_en.txt",
                 "size": 24,
-                "start_height": -2,
+                "start_height": 0,
+                "extrawidth": 1,
                 "spec_char": {
                     " ": {
                         "extrawidth": -4
@@ -739,8 +744,8 @@
                 "charset": "font_info/char_cn.txt",
                 "threshold": 80,
                 "size": 16,
-                "start_height": -1,
-                "extraheight": 0
+                "start_height": 1,
+                "extraheight": 2
             }
         ]
     },
@@ -785,6 +790,7 @@
                 "threshold": 155,
                 "extraheight": -2,
                 "start_height": -2,
+                "extrawidth": 9,
                 "fallback": "fnt_zh-cn/fzkt_GBK.ttf"
             }
         ]
