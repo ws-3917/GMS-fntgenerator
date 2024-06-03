@@ -306,8 +306,8 @@ class FontGlyph:
 # 执行主程序
 def main():
     # 配置文件路径
-    LANG = 'zh_CN_tsus'
-    csv_path = "font_info/basicinfo_tsus.csv"
+    LANG = 'zh_CN'
+    csv_path = "font_info/basicinfo.csv"
     json_path = f"font_info/glyphinfo_{LANG}.json"
 
     # 输出路径
@@ -316,35 +316,35 @@ def main():
 
     # 字体名称
     # psot
-    # fontnamelist = ["ComicSans",
-    #             "CryptOfTomorrow",
-    #             "DeterminationMono",
-    #             "DeterminationSans",
-    #             "DiaryOfAn8BitMage",
-    #             "DotumChe",
-    #             "MarsNeedsCunnilingus",
-    #             "Papyrus"
-    # ]
-    # tsus
-    fontnamelist = [
-            "dotumche_alt",
-            "dotumche_lg_alt",
-            "dotumche_sm_alt",
-            "dotumche_md_alt",
-            "dotumche_mdlg_alt",
-            "dotumche",
-            "dotumche_lg",
-            "dotumche_sm",
-            "dotumche_md",
-            "dotumche_mdlg",
-            "main",
-            "mainsm",
-            "mainsc",
-            "papyrus",
-            "sans",
-            "crypt",
-            "mars"
+    fontnamelist = ["ComicSans",
+                "CryptOfTomorrow",
+                "DeterminationMono",
+                "DeterminationSans",
+                "DiaryOfAn8BitMage",
+                "DotumChe",
+                "MarsNeedsCunnilingus",
+                "Papyrus"
     ]
+    # tsus
+    # fontnamelist = [
+    #         "dotumche_alt",
+    #         "dotumche_lg_alt",
+    #         "dotumche_sm_alt",
+    #         "dotumche_md_alt",
+    #         "dotumche_mdlg_alt",
+    #         "dotumche",
+    #         "dotumche_lg",
+    #         "dotumche_sm",
+    #         "dotumche_md",
+    #         "dotumche_mdlg",
+    #         "main",
+    #         "mainsm",
+    #         "mainsc",
+    #         "papyrus",
+    #         "sans",
+    #         "crypt",
+    #         "mars"
+    # ]
     distjson = list()
 
     # 生成字图和配置文件
@@ -354,17 +354,17 @@ def main():
         glyph.glyph_genetask()  # 生成字图
 
         # tsus
-        glyph.save_glyph(f"dist/{LANG}/fnt_{name}.png")          # 保存字图
-        glyph.write_fontimg_csv(f"dist/{LANG}/glyphs_fnt_{name}.csv")  # 写入csv
+        # glyph.save_glyph(f"dist/{LANG}/fnt_{name}.png")          # 保存字图
+        # glyph.write_fontimg_csv(f"dist/{LANG}/glyphs_fnt_{name}.csv")  # 写入csv
 
         # psot
-        #glyph.save_glyph(f"dist/{LANG}/{name}.png")          # 保存字图
-        #distjson.append(glyph.get_fontimg_json())     # 写入JSON
+        glyph.save_glyph(f"dist/{LANG}/{name}.png")          # 保存字图
+        distjson.append(glyph.get_fontimg_json())     # 写入JSON
     
     # psot: 保存JSON文件
-    # with open(f"dist/{LANG}/index.json", "w", encoding="UTF-8") as json_file:
-    #     json.dump(distjson, json_file, 
-    #               ensure_ascii=False, indent=4, separators=(", ", ": "))
+    with open(f"dist/{LANG}/index.json", "w", encoding="UTF-8") as json_file:
+        json.dump(distjson, json_file, 
+                  ensure_ascii=False, indent=4, separators=(", ", ": "))
     
     print("OK.")
 
