@@ -1,10 +1,2 @@
-/build
-
-*.spec
-
-/releases
-
 /.vscode
 .venv
-/lib
-/fnt_venv

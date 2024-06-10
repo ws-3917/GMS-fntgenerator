@@ -47,5 +47,5 @@ with open('font_info/char_cn_tw.txt', 'r', encoding='utf-8') as file:
 # 对文本进行排序
 sorted_text = sort_text(text)
 # 写入排序后的文本到输出文件
-with open('font_info/char_cn_tw.txt', 'w', encoding='utf-8') as file:
+with open('font_info/char_cn_tw2.txt', 'w', encoding='utf-8') as file:
     file.write(sorted_text)
