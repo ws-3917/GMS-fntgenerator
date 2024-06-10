@@ -333,7 +333,7 @@
                 "fallback": "fnt_jp/unifont_jp.otf",
                 "size": 15,
                 "extrawidth": 6,
-                "start_height": 2,
+                "start_height": 3,
                 "extraheight": 2,
                 "threshold": 120
             }
