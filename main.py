@@ -306,7 +306,7 @@ class FontGlyph:
 # 执行主程序
 def main():
     # 配置文件路径
-    LANG = 'zh_TW'
+    LANG = 'zh_CN'
     csv_path = "font_info/basicinfo.csv"
     json_path = f"font_info/glyphinfo_{LANG}.json"
 
@@ -350,7 +350,7 @@ def main():
     # 生成字图和配置文件
     for name in fontnamelist:
         glyph = FontGlyph(name, json_path, csv_path,
-                          fallbackfont="fnt_jp/unifont_jp.otf", width=2048)    # 初始化字图对象
+                          fallbackfont="fnt_zh-cn/unifont.otf", width=2048)    # 初始化字图对象
         glyph.glyph_genetask()  # 生成字图
 
         # tsus
