@@ -350,7 +350,7 @@ def main():
     # 生成字图和配置文件
     for name in fontnamelist:
         glyph = FontGlyph(name, json_path, csv_path,
-                          fallbackfont="fnt_zh-cn/ChillBitmap_16px.otf", width=2048)    # 初始化字图对象
+                          fallbackfont="fnt_jp/unifont_jp.otf", width=2048)    # 初始化字图对象
         glyph.glyph_genetask()  # 生成字图
 
         # tsus
