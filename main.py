@@ -157,12 +157,26 @@ class FontGlyph:
         fontimg = Image.new(imgtype, endpoint)
         # 绘制
         drawtool = ImageDraw.Draw(fontimg)
-        drawfont = self.__fbfont if fallback else self.__font
+        if fallback:
+            drawfont = self.__fbfont
+        elif ord(currentchar) > 0xfee0:
+            enconfig = self.get_font_config(currentchar, self.__encfg)
+            startpoint = enconfig['startpoint']
+            currentchar = chr(ord(currentchar) % 0xfee0)
+            drawfont = self.__enfont
+        else:
+            drawfont = self.__font
         
         drawtool.text(startpoint, currentchar, fill=255, font=drawfont)
 
         # 缩放步骤可以省略，转换为透明图
-        fontimg = self.convert_pic(fontimg, fontcfg['threshold'], currentchar)
+        # 0615 临时解决方案 - sans抽象的标点
+        if self.__name == "ComicSans" and (currentchar <= '】' or currentchar >= '！'):
+            threshold = max(0, fontcfg['threshold'] - 70)
+        else:
+            threshold = fontcfg['threshold']
+            
+        fontimg = self.convert_pic(fontimg, threshold, currentchar)
         # if fontimg:
         #     fontimg = fontimg.convert("RGBA")
         #     pixel = fontimg.load()
@@ -265,6 +279,9 @@ class FontGlyph:
             # 对于字库中的每个字符：不断读取并发送给绘制程序
             # 首先，对字体进行实例化
             self.__font = ImageFont.truetype(cfg['fontfile'], cfg['size'])
+            if "en" in cfg['charset']:
+                self.__enfont = self.__font
+                self.__encfg = cfg
             # 04-03 更新：缺字时尝试调用缺省字体路径
             if os.path.exists(cfg['fallback']):
                 self.__fbfont = ImageFont.truetype(cfg['fallback'], cfg['size'])  
@@ -372,7 +389,7 @@ def main():
         glyph.save_glyph(f"dist/{LANG}/{name}.png")          # 保存字图
         distjson.append(glyph.get_fontimg_json())     # 写入JSON
     
-    # psot: 保存JSON文件
+    # psot -  保存JSON文件
     with open(f"dist/{LANG}/index.json", "w", encoding="UTF-8") as json_file:
         json.dump(distjson, json_file, 
                   ensure_ascii=False, indent=4, separators=(", ", ": "))
