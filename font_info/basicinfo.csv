@@ -1,5 +1,5 @@
 "name","shift_x","shift_y","size","source"
-"ComicSans",0,0,16,"fonts/ComicSans.png"
+"ComicSans",0,-1,16,"fonts/ComicSans.png"
 "CryptOfTomorrow",0.5,1.5,8,"fonts/CryptOfTomorrow.png"
 "DeterminationMono",-0.5,0.5,16,"fonts/DeterminationMono.png"
 "DeterminationSans",0.5,0.5,16,"fonts/DeterminationSans.png"
