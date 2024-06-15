@@ -25,7 +25,7 @@
                         "extrawidth": 1
                     },
                     "@": {
-                        "extrawidth": 2
+                        "extrawidth": 4
                     },
                     "A": {
                         "extrawidth": 1
@@ -83,13 +83,19 @@
                     },
                     "&": {
                         "extrawidth": 2
+                    },
+                    "#": {
+                        "extrawidth": 2
+                    },
+                    "%": {
+                        "extrawidth": 4
                     }
                 }
             },
             {
                 "fontfile": "fnt_zh-tw/HKFY_W7_sans.ttf",
                 "charset": "font_info/char_cn_tw.txt",
-                "size": 16,
+                "size": 14,
                 "extraheight": -2,
                 "start_height": -1,
                 "extrawidth": 1,
@@ -297,8 +303,14 @@
                         "start_width": 1
                     },
                     "l": {
-                        "extrawidth": -3,
+                        "extrawidth": -4,
                         "start_width": 1
+                    },
+                    "m": {
+                        "extrawidth": 2
+                    },
+                    "w": {
+                        "extrawidth": 1
                     },
                     ".": {
                         "start_width": 2,
@@ -391,7 +403,8 @@
                 "spec_char": {
                     "I": {
                         "start_height": -1,
-                        "extrawidth": -3
+                        "extrawidth": -3,
+                        "start_width": -1
                     },
                     "B": {
                         "extrawidth": 1

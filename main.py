@@ -155,7 +155,6 @@ class FontGlyph:
         # 初始化完毕，创建子图（二值图）
         imgtype = '1' if fontcfg['pixel'] else 'L'
         fontimg = Image.new(imgtype, endpoint)
-
         # 绘制
         drawtool = ImageDraw.Draw(fontimg)
         drawfont = self.__fbfont if fallback else self.__font
@@ -164,6 +163,13 @@ class FontGlyph:
 
         # 缩放步骤可以省略，转换为透明图
         fontimg = self.convert_pic(fontimg, fontcfg['threshold'], currentchar)
+        # if fontimg:
+        #     fontimg = fontimg.convert("RGBA")
+        #     pixel = fontimg.load()
+        #     for i in range(13):
+        #         for j in range(17):
+        #             if pixel[i, j] != (0, 0, 0, 0):
+        #                 pixel[i, j] = (0xea, 0x3c, 0x45, 0xff)
         return (fontimg, endpoint)
 
     # 将生成的二值图透明化，转为含Alpha的灰度图
@@ -288,6 +294,11 @@ class FontGlyph:
                                 continue
                         else:   # 否则，直接跳过这一字体
                             continue
+                    # 0615临时：导出字块
+                    # if self.__name == "DeterminationSans" and "cn" in cfg['charset']:
+                    #     fontimg.save(f"dist/uf12/{ch}.png")
+                    # elif self.__name == "DotumChe" and "cn" in cfg['charset']:
+                    #     fontimg.save(f"dist/uf14/SPAM-{ch}.png")
                     # 随后，将单字添加到总的大字图
                     self.add_fontimg(fontimg, endpoint)
                     # 接着，更新JSON文件或CSV文件

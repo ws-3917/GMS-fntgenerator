@@ -25,7 +25,7 @@
                         "extrawidth": 1
                     },
                     "@": {
-                        "extrawidth": 2
+                        "extrawidth": 4
                     },
                     "A": {
                         "extrawidth": 1
@@ -83,17 +83,23 @@
                     },
                     "&": {
                         "extrawidth": 2
+                    },
+                    "#": {
+                        "extrawidth": 2
+                    },
+                    "%": {
+                        "extrawidth": 4
                     }
                 }
             },
             {
                 "fontfile": "fnt_zh-cn/fzse_GBK.ttf",
                 "charset": "font_info/char_cn.txt",
-                "size": 16,
+                "size": 14,
                 "extraheight": -4,
                 "start_height": -2,
                 "extrawidth": 1,
-                "threshold": 160,
+                "threshold": 165,
                 "fallback": "fnt_zh-cn/fzse_GBK.ttf"
             }
         ]
@@ -294,8 +300,14 @@
                         "start_width": 1
                     },
                     "l": {
-                        "extrawidth": -3,
+                        "extrawidth": -4,
                         "start_width": 1
+                    },
+                    "m": {
+                        "extrawidth": 2
+                    },
+                    "w": {
+                        "extrawidth": 1
                     },
                     ".": {
                         "start_width": 2,
@@ -387,7 +399,8 @@
                 "spec_char": {
                     "I": {
                         "start_height": -1,
-                        "extrawidth": -3
+                        "extrawidth": -3,
+                        "start_width": -1
                     },
                     "B": {
                         "extrawidth": 1
