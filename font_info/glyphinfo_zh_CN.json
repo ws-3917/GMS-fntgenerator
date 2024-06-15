@@ -7,8 +7,8 @@
                 "charset": "font_info/char_en.txt",
                 "size": 16,
                 "extrawidth": -1,
-                "extraheight": -1,
-                "start_height": -1,
+                "extraheight": -2,
+                "start_height": -2,
                 "spec_char": {
                     "i": {
                         "start_width": 1,
@@ -97,8 +97,8 @@
                 "charset": "font_info/char_cn.txt",
                 "size": 14,
                 "extraheight": -4,
-                "start_height": -2,
-                "extrawidth": 1,
+                "start_height": -3,
+                "extrawidth": 2,
                 "threshold": 165,
                 "fallback": "fnt_zh-cn/fzse_GBK.ttf"
             }

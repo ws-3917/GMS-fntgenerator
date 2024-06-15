@@ -7,8 +7,8 @@
                 "charset": "font_info/char_en.txt",
                 "size": 16,
                 "extrawidth": -1,
-                "extraheight": -1,
-                "start_height": -1,
+                "extraheight": -2,
+                "start_height": -2,
                 "spec_char": {
                     "i": {
                         "start_width": 1,
@@ -98,7 +98,7 @@
                 "size": 14,
                 "extraheight": -2,
                 "start_height": -1,
-                "extrawidth": 1,
+                "extrawidth": 2,
                 "threshold": 170,
                 "fallback": "fnt_zh-tw/HKFY_W7_sans.ttf"
             }
