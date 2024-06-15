@@ -97,7 +97,7 @@
                 "charset": "font_info/char_cn_tw.txt",
                 "size": 14,
                 "extraheight": -2,
-                "start_height": -1,
+                "start_height": 1,
                 "extrawidth": 2,
                 "threshold": 170,
                 "fallback": "fnt_zh-tw/HKFY_W7_sans.ttf"
