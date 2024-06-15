@@ -97,7 +97,7 @@
                 "charset": "font_info/char_cn.txt",
                 "size": 14,
                 "extraheight": -4,
-                "start_height": -1,
+                "start_height": -2,
                 "extrawidth": 2,
                 "threshold": 165,
                 "fallback": "fnt_zh-cn/fzse_GBK.ttf"
