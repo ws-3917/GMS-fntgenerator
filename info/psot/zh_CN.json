@@ -14,7 +14,7 @@
         "start_y": -1
     },
     "DeterminationMono": {
-        "fontfile": "MiuiBitmap-Regular.ttf",
+        "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont",
         "size": 12,
         "pixel": true,
@@ -46,12 +46,12 @@
         }
     },
     "DeterminationSans": {
-        "fontfile": "MiuiBitmap-Regular.ttf",
+        "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont",
         "size": 12,
         "pixel": true,
         "extra_x": 2,
-        "extra_y": -1,
+        "extra_y": 0,
         "special": {
             "。": {
                 "start_y": 2
