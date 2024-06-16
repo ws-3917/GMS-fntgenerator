@@ -5,9 +5,9 @@ import numpy as np
 
 # 字体路径、待显示字符、字体大小、绘图类型
 # '1'代表二值图（黑白），'L'代表灰度图
-fontfile = "fnt_zh-cn/MiuiBitmap-Regular.ttf"   
+fontfile = "fnt_zh-cn/unifont.otf"   
 ch = "派羹"
-size = 12
+size = 16
 glyphtype = 'L'
 threshold = 160     # 二值化阈值
 
@@ -16,7 +16,7 @@ font = ImageFont.truetype(fontfile, size)
 # startpoint 为左上角绘制起点，endpoint为右下角绘制终点（图块大小）
 # 可以用getbbox计算，也可以直接手动指定
 
-startpoint = (0, -1)
+startpoint = (0, 0)
 #startpoint = font.getbbox(ch)[:2]
 #endpoint = (18, 18)
 endpoint = font.getbbox(ch)[2:]

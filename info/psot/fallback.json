@@ -1,0 +1,14 @@
+{
+    "unifont.otf": {
+        "size": 16,
+        "pixel": true,
+        "start_y": 0,
+        "start_x": 0
+    },
+    "unifont-jp.otf": {
+        "size": 16,
+        "pixel": true,
+        "start_y": 0,
+        "start_x": 0
+    }
+}

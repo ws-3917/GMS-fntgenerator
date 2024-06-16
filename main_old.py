@@ -1,8 +1,7 @@
 # 字图配置生成主程序
 import csv, json, os
-from PIL import Image, ImageFont, ImageDraw
 import numpy as np
-
+from PIL import Image, ImageFont, ImageDraw
 # 定义字图类
 class FontGlyph:
     # 初始化
@@ -111,37 +110,37 @@ class FontGlyph:
             # 指定了矩形框大小后，再指定每一个字体的绘制高度起点（可以是负数）。
             fontselect = ["A", "g", "赢"]
 
-            optionalkeys = ['extrawidth', 'extraheight', "start_height", 'start_width']
+            optionalkeys = ['extra_x', 'extra_y', "start_y", 'start_x']
             for keyname in optionalkeys:
                 if keyname not in cfg:
                     cfg[keyname] = 0
 
             # 字框大小设置
             font = ImageFont.truetype(cfg['fontfile'], cfg['size'])
-            cfg['width'] = max([font.getbbox(ch)[2] for ch in fontselect]) + cfg['extrawidth']
-            cfg['height'] = max([font.getbbox(ch)[3] for ch in fontselect]) + cfg['extraheight']
+            cfg['width'] = max([font.getbbox(ch)[2] for ch in fontselect]) + cfg['extra_x']
+            cfg['height'] = max([font.getbbox(ch)[3] for ch in fontselect]) + cfg['extra_y']
 
             source[it] = cfg
             
         return source
 
-    # 04-03 更新：针对 spec_char 特定字符设定
+    # 04-03 更新：针对 special 特定字符设定
     def get_font_config(self, currentchar : str, fontcfg : dict):
         # 使用默认配置
         config = {
-            'startpoint': [fontcfg['start_width'], fontcfg['start_height']],
+            'startpoint': [fontcfg['start_x'], fontcfg['start_y']],
             'width': fontcfg['width'],
             'height': fontcfg['height']
         }
 
         # 根据字符调整配置
-        spec_chars = fontcfg.get('spec_char', {})
-        if currentchar in spec_chars:
-            spec = spec_chars[currentchar]
-            config['startpoint'][0] += spec.get('start_width', 0)
-            config['startpoint'][1] += spec.get('start_height', 0)
-            config['width'] += spec.get('extrawidth', 0)
-            config['height'] += spec.get('extraheight', 0)
+        specials = fontcfg.get('special', {})
+        if currentchar in specials:
+            spec = specials[currentchar]
+            config['startpoint'][0] += spec.get('start_x', 0)
+            config['startpoint'][1] += spec.get('start_y', 0)
+            config['width'] += spec.get('extra_x', 0)
+            config['height'] += spec.get('extra_y', 0)
 
         return config
     

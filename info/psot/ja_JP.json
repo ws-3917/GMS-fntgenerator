@@ -2,47 +2,47 @@
     "ComicSans": {
         "fontfile": "HAPPYRUIKAKYOHKAN-07.TTF",
         "size": 14,
-        "extraheight": 0,
-        "start_height": 0,
-        "extrawidth": 1,
+        "extra_y": 0,
+        "start_y": 0,
+        "extra_x": 1,
         "threshold": 220
     },
     "CryptOfTomorrow": {
         "fontfile": "fusion-pixel-8px-ja.ttf",
         "threshold": 80,
         "size": 8,
-        "start_height": -1
+        "start_y": -1
     },
     "DeterminationMono": {
         "fontfile": "JF-Dot-Shinonome12.ttf",
         "fallback": "unifont_jp.otf",
         "size": 12,
         "pixel": true,
-        "extrawidth": 3,
-        "extraheight": -1,
-        "start_height": -1,
-        "spec_char": {
+        "extra_x": 3,
+        "extra_y": -1,
+        "start_y": -1,
+        "special": {
             "。": {
-                "start_height": 2
+                "start_y": 2
             },
             "，": {
-                "start_height": 2
+                "start_y": 2
             },
             "“": {
-                "start_width": -4,
-                "extrawidth": -5
+                "start_x": -4,
+                "extra_x": -5
             },
             "”": {
-                "start_width": -2,
-                "extrawidth": -5
+                "start_x": -2,
+                "extra_x": -5
             },
             "‘": {
-                "start_width": -7,
-                "extrawidth": -9
+                "start_x": -7,
+                "extra_x": -9
             },
             "’": {
-                "start_width": -2,
-                "extrawidth": -9
+                "start_x": -2,
+                "extra_x": -9
             }
         }
     },
@@ -51,31 +51,31 @@
         "fallback": "unifont_jp.otf",
         "size": 12,
         "pixel": true,
-        "extrawidth": 2,
-        "extraheight": -1,
-        "start_height": -1,
-        "spec_char": {
+        "extra_x": 2,
+        "extra_y": -1,
+        "start_y": -1,
+        "special": {
             "。": {
-                "start_height": 2
+                "start_y": 2
             },
             "，": {
-                "start_height": 2
+                "start_y": 2
             },
             "“": {
-                "start_width": -4,
-                "extrawidth": -5
+                "start_x": -4,
+                "extra_x": -5
             },
             "”": {
-                "start_width": -2,
-                "extrawidth": -5
+                "start_x": -2,
+                "extra_x": -5
             },
             "‘": {
-                "start_width": -7,
-                "extrawidth": -9
+                "start_x": -7,
+                "extra_x": -9
             },
             "’": {
-                "start_width": -2,
-                "extrawidth": -9
+                "start_x": -2,
+                "extra_x": -9
             }
         }
     },
@@ -83,30 +83,30 @@
         "fontfile": "fusion-pixel-8px-ja.ttf",
         "threshold": 80,
         "size": 16,
-        "start_height": -1
+        "start_y": -1
     },
     "DotumChe": {
         "fontfile": "FOT-UDKAKUGOC80PRO-M.OTF",
         "fallback": "unifont_jp.otf",
         "size": 16,
-        "extrawidth": 4,
-        "start_height": 2,
-        "extraheight": 2,
+        "extra_x": 4,
+        "start_y": 2,
+        "extra_y": 2,
         "threshold": 160
     },
     "MarsNeedsCunnilingus": {
         "fontfile": "fusion-pixel-8px-ja.ttf",
         "threshold": 80,
         "size": 16,
-        "start_height": -1,
-        "extraheight": 0
+        "start_y": -1,
+        "extra_y": 0
     },
     "Papyrus": {
         "fontfile": "TANUKIMAGIC-2.TTF",
         "size": 17,
         "threshold": 110,
-        "extrawidth": 1,
-        "extraheight": 0,
-        "start_height": 0
+        "extra_x": 1,
+        "extra_y": 0,
+        "start_y": 0
     }
 }
