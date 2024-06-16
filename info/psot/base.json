@@ -36,10 +36,10 @@
         "height": 17
     },
     "MarsNeedsCunnilingus": {
-        "size": 18,
-        "shift_x": 0,
-        "shift_y": 0,
-        "height": 17
+        "size": 24,
+        "shift_x": 0.5,
+        "shift_y": 0.5,
+        "height": 18
     },
     "Papyrus": {
         "size": 16,
