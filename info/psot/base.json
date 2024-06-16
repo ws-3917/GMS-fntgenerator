@@ -2,8 +2,8 @@
     "ComicSans": {
         "size": 16,
         "shift_x": 0,
-        "shift_y": -1,
-        "height": 16
+        "shift_y": 0,
+        "height": 15
     },
     "CryptOfTomorrow": {
         "size": 8,
