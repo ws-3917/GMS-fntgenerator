@@ -20,6 +20,7 @@
         "size": 12,
         "extra_x": 3,
         "extra_y": -1,
+        "start_x": -1,
         "special": {
             "。": {
                 "start_y": 2
@@ -52,6 +53,7 @@
         "size": 12,
         "extra_x": 2,
         "extra_y": -1,
+        "start_x": -1,
         "special": {
             "。": {
                 "start_y": 2

@@ -171,7 +171,7 @@ class FontGlyph:
                     for y in range(self.prev_y, self.y):
                         pixel[x, y] = (pixel[x, y][0], 255 * int(pixel[x, y][1] > threshold))
             # 全部结束后，保存图片和csv到文件
-            self.glyph.save(f"dist/{self.project}/{font}.png")
-            with open(f"dist/{self.project}/{font}.csv", "w", encoding="utf-8", newline='') as file:
+            self.glyph.save(f"dist/{self.project}/{self.langlist[-1]}/{font}.png")
+            with open(f"dist/{self.project}/{self.langlist[-1]}/{font}.csv", "w", encoding="utf-8", newline='') as file:
                 self.writer = csv.writer(file, delimiter=';')
                 self.writer.writerows(self.csv)
