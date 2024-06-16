@@ -1,0 +1,137 @@
+{
+    "ComicSans": {
+        "fontfile": "HKFY_W7_sans.ttf",
+        "size": 14,
+        "extraheight": -2,
+        "start_height": -2,
+        "extrawidth": 2,
+        "threshold": 170
+    },
+    "CryptOfTomorrow": {
+        "fontfile": "fzxs12-Pixel.ttf",
+        "fallback": "unifont_jp.otf",
+        "size": 12,
+        "pixel": true,
+        "extrawidth": 3,
+        "extraheight": -1,
+        "spec_char": {
+            "。": {
+                "start_height": 2
+            },
+            "，": {
+                "start_height": 2
+            },
+            "“": {
+                "start_width": -4,
+                "extrawidth": -5
+            },
+            "”": {
+                "start_width": -2,
+                "extrawidth": -5
+            },
+            "‘": {
+                "start_width": -7,
+                "extrawidth": -9
+            },
+            "’": {
+                "start_width": -2,
+                "extrawidth": -9
+            }
+        }
+    },
+    "DeterminationMono": {
+        "fontfile": "fzxs12-Pixel.ttf",
+        "fallback": "unifont_jp.otf",
+        "size": 12,
+        "pixel": true,
+        "extrawidth": 3,
+        "extraheight": -1,
+        "spec_char": {
+            "。": {
+                "start_height": 2
+            },
+            "，": {
+                "start_height": 2
+            },
+            "“": {
+                "start_width": -4,
+                "extrawidth": -5
+            },
+            "”": {
+                "start_width": -2,
+                "extrawidth": -5
+            },
+            "‘": {
+                "start_width": -7,
+                "extrawidth": -9
+            },
+            "’": {
+                "start_width": -2,
+                "extrawidth": -9
+            }
+        }
+    },
+    "DeterminationSans": {
+        "fontfile": "fzxs12-Pixel.ttf",
+        "fallback": "unifont_jp.otf",
+        "size": 12,
+        "pixel": true,
+        "extrawidth": 2,
+        "extraheight": -1,
+        "spec_char": {
+            "。": {
+                "start_height": 2
+            },
+            "，": {
+                "start_height": 2
+            },
+            "“": {
+                "start_width": -4,
+                "extrawidth": -5
+            },
+            "”": {
+                "start_width": -2,
+                "extrawidth": -5
+            },
+            "‘": {
+                "start_width": -7,
+                "extrawidth": -9
+            },
+            "’": {
+                "start_width": -2,
+                "extrawidth": -9
+            }
+        }
+    },
+    "DiaryOfAn8BitMage": {
+        "fontfile": "fusion-pixel-8px-zh_hant.ttf",
+        "fallback": "fusion-pixel-8px-zh_hant.ttf",
+        "threshold": 80,
+        "size": 16,
+        "start_height": -1
+    },
+    "DotumChe": {
+        "fontfile": "WQY_BS_14px.ttf",
+        "fallback": "unifont_jp.otf",
+        "size": 15,
+        "extrawidth": 6,
+        "start_height": 3,
+        "extraheight": 2,
+        "threshold": 120
+    },
+    "MarsNeedsCunnilingus": {
+        "fontfile": "fusion-pixel-8px-zh_hant.ttf",
+        "fallback": "fusion-pixel-8px-zh_hant.ttf",
+        "threshold": 80,
+        "size": 16,
+        "start_height": -1,
+        "extraheight": 0
+    },
+    "Papyrus": {
+        "fontfile": "QSSXT_papy.ttf",
+        "size": 18,
+        "threshold": 110,
+        "extraheight": -2,
+        "start_height": -2
+    }
+}
