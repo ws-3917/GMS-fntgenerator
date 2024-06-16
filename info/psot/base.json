@@ -1,0 +1,50 @@
+{
+    "ComicSans": {
+        "size": 16,
+        "shift_x": 0,
+        "shift_y": -1,
+        "height": 16
+    },
+    "CryptOfTomorrow": {
+        "size": 8,
+        "shift_x": 0.5,
+        "shift_y": 0.5,
+        "height": 6
+    },
+    "DeterminationMono": {
+        "size": 16,
+        "shift_x": -0.5,
+        "shift_y": 0.5,
+        "height": 14
+    },
+    "DeterminationSans": {
+        "size": 16,
+        "shift_x": 0.5,
+        "shift_y": 0.5,
+        "height": 14
+    },
+    "DiaryOfAn8BitMage": {
+        "size": 20,
+        "shift_x": 0,
+        "shift_y": 0,
+        "height": 19
+    },
+    "DotumChe": {
+        "size": 18,
+        "shift_x": 0,
+        "shift_y": 0,
+        "height": 17
+    },
+    "MarsNeedsCunnilingus": {
+        "size": 18,
+        "shift_x": 0,
+        "shift_y": 0,
+        "height": 17
+    },
+    "Papyrus": {
+        "size": 16,
+        "shift_x": 0,
+        "shift_y": 0,
+        "height": 16
+    }
+}
