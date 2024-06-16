@@ -101,7 +101,7 @@
         "size": 16,
         "extra_x": -1,
         "extra_y": -2,
-        "start_y": -2,
+        "start_y": -3,
         "special": {
             ":": {
                 "start_x": 2
@@ -119,7 +119,7 @@
         "size": 16,
         "extra_x": -2,
         "extra_y": -2,
-        "start_y": -2,
+        "start_y": -3,
         "special": {
             " ": {
                 "extra_x": -3

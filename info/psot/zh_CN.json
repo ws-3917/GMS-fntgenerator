@@ -18,7 +18,7 @@
         "fallback": "unifont",
         "threshold": 128,
         "size": 12,
-        "start_y": -2,
+        "start_y": -1,
         "extra_x": 3,
         "extra_y": -1,
         "special": {
@@ -52,7 +52,7 @@
         "size": 12,
         "threshold": 128,
         "extra_x": 2,
-        "start_y": -2,
+        "start_y": -1,
         "extra_y": -1,
         "special": {
             "。": {
