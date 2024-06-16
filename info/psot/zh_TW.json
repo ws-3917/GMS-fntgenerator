@@ -8,39 +8,15 @@
         "threshold": 170
     },
     "CryptOfTomorrow": {
-        "fontfile": "fzxs12-Pixel.ttf",
-        "fallback": "unifont_jp",
-        "size": 12,
-        "extra_x": 3,
-        "extra_y": -1,
-        "special": {
-            "。": {
-                "start_y": 2
-            },
-            "，": {
-                "start_y": 2
-            },
-            "“": {
-                "start_x": -4,
-                "extra_x": -5
-            },
-            "”": {
-                "start_x": -2,
-                "extra_x": -5
-            },
-            "‘": {
-                "start_x": -7,
-                "extra_x": -9
-            },
-            "’": {
-                "start_x": -2,
-                "extra_x": -9
-            }
-        }
+        "fontfile": "fusion-pixel-8px-zh_hant.ttf",
+        "threshold": 80,
+        "size": 8,
+        "start_y": -1
     },
     "DeterminationMono": {
         "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont_jp",
+        "threshold": 128,
         "size": 12,
         "extra_x": 3,
         "extra_y": -1,
@@ -72,6 +48,7 @@
     "DeterminationSans": {
         "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont_jp",
+        "threshold": 128,
         "size": 12,
         "extra_x": 2,
         "extra_y": -1,

@@ -1,7 +1,7 @@
 import os, tools
 def main():
-    project = 'psot'    # 或 tsus
-    langlist = ['en_US', 'zh_CN']   # 或 zh_TW, ja_JP
+    project = 'psot'    # psot 或 tsus
+    langlist = ['en_US', 'zh_TW']   # en_US, zh_CN, zh_TW 或 ja_JP
     
     os.system(f"mkdir -p dist/{project}")
     tools.FontGlyph(project, langlist).task()
