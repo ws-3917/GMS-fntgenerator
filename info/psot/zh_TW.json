@@ -11,7 +11,6 @@
         "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont_jp",
         "size": 12,
-        "pixel": true,
         "extra_x": 3,
         "extra_y": -1,
         "special": {
@@ -43,7 +42,6 @@
         "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont_jp",
         "size": 12,
-        "pixel": true,
         "extra_x": 3,
         "extra_y": -1,
         "special": {
@@ -75,7 +73,6 @@
         "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont_jp",
         "size": 12,
-        "pixel": true,
         "extra_x": 2,
         "extra_y": -1,
         "special": {

@@ -2,14 +2,12 @@
     "unifont": {
         "fontfile": "unifont.otf",
         "size": 16,
-        "pixel": true,
         "start_y": 0,
         "start_x": 0
     },
     "unifont_jp": {
         "fontfile": "unifont_jp.otf",
         "size": 16,
-        "pixel": true,
         "start_y": 0,
         "start_x": 0
     }

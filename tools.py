@@ -143,7 +143,7 @@ class FontGlyph:
                 if self.fallbackcfg:
                     self.fallbackfont = ImageFont.truetype(f"fonts/{lang}/" + self.fallbackcfg["fontfile"], self.fallbackcfg["size"])
                     self.fallbackfail = Image.new("1", (self.width, self.height), 0)
-                    ImageDraw.Draw(self.fail).text((0, 0), "𘏚", fill=1, font=self.fallbackfont)
+                    ImageDraw.Draw(self.fallbackfail).text((0, 0), "𘏚", fill=1, font=self.fallbackfont)
                 
                 # 生成绘制失败字符图
                 self.fail = Image.new("1", (self.width, self.height), 0)

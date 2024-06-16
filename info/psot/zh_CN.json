@@ -16,8 +16,8 @@
     "DeterminationMono": {
         "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont",
+        "threshold": 128,
         "size": 12,
-        "pixel": true,
         "extra_x": 3,
         "extra_y": -1,
         "special": {
@@ -49,7 +49,7 @@
         "fontfile": "fzxs12-Pixel.ttf",
         "fallback": "unifont",
         "size": 12,
-        "pixel": true,
+        "threshold": 128,
         "extra_x": 2,
         "extra_y": 0,
         "special": {
