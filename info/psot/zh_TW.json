@@ -9,7 +9,7 @@
     },
     "CryptOfTomorrow": {
         "fontfile": "fzxs12-Pixel.ttf",
-        "fallback": "unifont_jp.otf",
+        "fallback": "unifont_jp",
         "size": 12,
         "pixel": true,
         "extra_x": 3,
@@ -41,7 +41,7 @@
     },
     "DeterminationMono": {
         "fontfile": "fzxs12-Pixel.ttf",
-        "fallback": "unifont_jp.otf",
+        "fallback": "unifont_jp",
         "size": 12,
         "pixel": true,
         "extra_x": 3,
@@ -73,7 +73,7 @@
     },
     "DeterminationSans": {
         "fontfile": "fzxs12-Pixel.ttf",
-        "fallback": "unifont_jp.otf",
+        "fallback": "unifont_jp",
         "size": 12,
         "pixel": true,
         "extra_x": 2,
@@ -112,7 +112,7 @@
     },
     "DotumChe": {
         "fontfile": "WQY_BS_14px.ttf",
-        "fallback": "unifont_jp.otf",
+        "fallback": "unifont_jp",
         "size": 15,
         "extra_x": 6,
         "start_y": 3,

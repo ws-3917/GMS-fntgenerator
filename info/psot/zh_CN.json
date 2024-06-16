@@ -15,7 +15,7 @@
     },
     "DeterminationMono": {
         "fontfile": "MiuiBitmap-Regular.ttf",
-        "fallback": "unifont.otf",
+        "fallback": "unifont",
         "size": 12,
         "pixel": true,
         "extra_x": 3,
@@ -47,7 +47,7 @@
     },
     "DeterminationSans": {
         "fontfile": "MiuiBitmap-Regular.ttf",
-        "fallback": "unifont.otf",
+        "fallback": "unifont",
         "size": 12,
         "pixel": true,
         "extra_x": 2,
@@ -85,7 +85,7 @@
     },
     "DotumChe": {
         "fontfile": "fzxs14.ttf",
-        "fallback": "unifont.otf",
+        "fallback": "unifont",
         "size": 14,
         "extra_x": 6,
         "start_y": 2,

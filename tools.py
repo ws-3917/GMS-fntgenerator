@@ -36,7 +36,7 @@ class FontGlyph:
         testfont = ["A", "g", "赢"]     # 用来确定字体实际大小的测试用汉字
         for lang in self.langlist:
             fontobj = ImageFont.truetype(
-                self.fontinfo[lang][font]["fontfile"], 
+                f"fonts/{lang}/" + self.fontinfo[lang][font]["fontfile"], 
                 self.fontinfo[lang][font]["size"]
             )
             self.fontsize[lang] = (
@@ -45,7 +45,7 @@ class FontGlyph:
             )
     
     # 自动计算图片高度
-    def totalheight(self, font) -> int:
+    def totalheight(self) -> int:
         height = 0
         for lang in self.langlist:
             charcount = len(self.charset[lang]) # 字符数
@@ -122,25 +122,25 @@ class FontGlyph:
         for font in self.fontlist:
             # 创建新字图
             print(colored(f"--> {font}", "blue"))
-            self.glyph = Image.new('LA', (self.totalwidth, self.totalheight(font)), 0)
+            self.loadsize(font)
+            self.glyph = Image.new('LA', (self.totalwidth, self.totalheight()), 0)
             self.drawtool = ImageDraw.Draw(self.glyph)
             self.x = 0
             self.y = 0
             self.csv = [tuple(self.baseinfo[font].values())]
-            self.loadsize(font)
             # 针对每种语言
             for lang in self.langlist:
                 # 加载配置文件和字符集
                 print(colored(f" -> {lang}", "yellow"))
                 (self.width, self.height) = self.fontsize[lang]
                 self.cfg = self.fontinfo[lang][font]
-                self.font = ImageFont.truetype(self.cfg["fontfile"], self.cfg["size"])
+                self.font = ImageFont.truetype(f"fonts/{lang}/" + self.cfg["fontfile"], self.cfg["size"])
                 if lang == "en_US":
                     self.encfg = self.cfg
                     self.enfont = self.font
                 self.fallbackcfg = self.fallbackinfo.get(self.cfg.get("fallback"))
                 if self.fallbackcfg:
-                    self.fallbackfont = ImageFont.truetype(self.fallbackcfg["fontfile"], self.fallbackcfg["size"])
+                    self.fallbackfont = ImageFont.truetype(f"fonts/{lang}/" + self.fallbackcfg["fontfile"], self.fallbackcfg["size"])
                 # 开始逐一绘制字符
                 for ch in self.charset[lang]:
                     # 检查字符是否可用
@@ -158,6 +158,6 @@ class FontGlyph:
             
             # 全部结束后，保存图片和csv到文件
             self.glyph.save(f"dist/{self.project}/{font}.png")
-            with open(f"dist/{self.project}/{font}.csv", encoding="utf-8", newline='') as file:
+            with open(f"dist/{self.project}/{font}.csv", "w", encoding="utf-8", newline='') as file:
                 self.writer = csv.writer(file, delimiter=';')
                 self.writer.writerows(self.csv)

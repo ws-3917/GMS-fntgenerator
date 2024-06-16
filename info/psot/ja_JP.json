@@ -15,7 +15,7 @@
     },
     "DeterminationMono": {
         "fontfile": "JF-Dot-Shinonome12.ttf",
-        "fallback": "unifont_jp.otf",
+        "fallback": "unifont_jp",
         "size": 12,
         "pixel": true,
         "extra_x": 3,
@@ -48,7 +48,7 @@
     },
     "DeterminationSans": {
         "fontfile": "JF-Dot-Shinonome12.ttf",
-        "fallback": "unifont_jp.otf",
+        "fallback": "unifont_jp",
         "size": 12,
         "pixel": true,
         "extra_x": 2,
@@ -87,7 +87,7 @@
     },
     "DotumChe": {
         "fontfile": "FOT-UDKAKUGOC80PRO-M.OTF",
-        "fallback": "unifont_jp.otf",
+        "fallback": "unifont_jp",
         "size": 16,
         "extra_x": 4,
         "start_y": 2,
