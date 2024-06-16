@@ -119,7 +119,7 @@
         "size": 16,
         "extra_x": -2,
         "extra_y": -2,
-        "start_y": -3,
+        "start_y": -2,
         "special": {
             " ": {
                 "extra_x": -3
