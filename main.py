@@ -32,6 +32,7 @@ class FontGlyph:
         it = 0  # 迭代指标
         for cfg in self.__fontconfig:
             # 通过字符总数和字体矩阵宽度计算行数
+            # 0616: pixel和threshold属性也需要权衡
             charlen = self.__charcount[it]
 
             ch_perline = self.pic_width // cfg['width']
@@ -221,34 +222,34 @@ class FontGlyph:
         self.__x += width
 
     # 更新字体信息到JSON (for Outertale)
-    def update_fontimg_json(self, currentchar : str, endpoint: tuple) -> None:
-        (width, height) = endpoint
-        data = dict()
+    # def update_fontimg_json(self, currentchar : str, endpoint: tuple) -> None:
+    #     (width, height) = endpoint
+    #     data = dict()
 
-        # 构建 outertale 接受的 JSON 数据
-        data['area'] = {
-            "x": self.__x - width,
-            #"y": self.__y + startpoint[1],
-            # 03-30：高度修正
-            "y": self.__y,
-            "width": width,
-            "height": height
-        }
-        data['code'] = str(ord(currentchar))
-        data['margin'] = width
-        data['metrics'] = {
-            "height": height,
-            "width": width,
-            "x": 0,
-            "y": 0
-        }
+    #     # 构建 outertale 接受的 JSON 数据
+    #     data['area'] = {
+    #         "x": self.__x - width,
+    #         #"y": self.__y + startpoint[1],
+    #         # 03-30：高度修正
+    #         "y": self.__y,
+    #         "width": width,
+    #         "height": height
+    #     }
+    #     data['code'] = str(ord(currentchar))
+    #     data['margin'] = width
+    #     data['metrics'] = {
+    #         "height": height,
+    #         "width": width,
+    #         "x": 0,
+    #         "y": 0
+    #     }
 
-        # 数据构建完成，在原JSON中添加这条glyph记录
-        self.__jsonfile['glyphs'].append(data)
+    #     # 数据构建完成，在原JSON中添加这条glyph记录
+    #     self.__jsonfile['glyphs'].append(data)
 
     # 获取生成的json
-    def get_fontimg_json(self) -> dict:
-        return self.__jsonfile
+    # def get_fontimg_json(self) -> dict:
+    #     return self.__jsonfile
     
     # 04-03 Update：更新字体信息到csv (for GMS game, e.g. TS!Underswap)
     def update_fontimg_csv(self, currentchar : str, endpoint: tuple) -> None:
@@ -304,6 +305,7 @@ class FontGlyph:
                     # 04-03 Update：如果发现空字图，说明当前字体缺少对应字符
                     if not fontimg or fontimg == self.draw_singlefont('𘏚', cfg)[0]:
                         # 此时，尝试调用缺省字体文件
+                        # 0616: 不指定fallback的就认为不需要fallback
                         if self.__fbfont:
                             # 如果发现缺省字体，则用缺省字体重新绘制
                             fontimg, endpoint = self.draw_singlefont(ch, cfg, fallback=True)
@@ -318,8 +320,8 @@ class FontGlyph:
                     #     fontimg.save(f"dist/uf14/SPAM-{ch}.png")
                     # 随后，将单字添加到总的大字图
                     self.add_fontimg(fontimg, endpoint)
-                    # 接着，更新JSON文件或CSV文件
-                    self.update_fontimg_json(ch, endpoint)
+                    # # 接着，更新JSON文件或CSV文件
+                    # self.update_fontimg_json(ch, endpoint)
                     self.update_fontimg_csv(ch, endpoint)
                 it += 1     # 迭代指标
 
@@ -341,7 +343,6 @@ def main():
     # 输出路径
     os.system(f"rm -rf dist/{LANG} && mkdir -p dist/{LANG}")
     
-
     # 字体名称
     # psot
     fontnamelist = ["ComicSans",
