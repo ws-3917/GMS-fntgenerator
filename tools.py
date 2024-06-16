@@ -61,8 +61,8 @@ class FontGlyph:
         if ch == '\n':
             return 'nope'
         testglyph = Image.new("1", (self.width, self.height), 0)
-        ImageDraw.Draw(testglyph).text((0, 0), chr(ord(ch) % 0xfee0), 
-                                       fill=1, font=self.enfont if ord(ch) > 0xfee0 else self.font)  
+        ImageDraw.Draw(testglyph).text((0, 0), ch, 
+                                       fill=1, font=self.font)  
         # 检查字图
         if testglyph != self.fail:
             return 'yep'
@@ -81,9 +81,9 @@ class FontGlyph:
         if fallback:
             cfg = self.fallbackcfg
             font = self.fallbackfont
-        elif ord(ch) > 0xfee0:
-            cfg = self.encfg
-            font = self.enfont
+        # elif ord(ch) > 0xfee0:
+        #     cfg = self.encfg
+        #     font = self.enfont
         else:
             cfg = self.cfg
             font = self.font
@@ -108,7 +108,7 @@ class FontGlyph:
         
         # 开始绘制
         self.drawtool.text((self.x + start_x, self.y + start_y),
-                           chr(ord(ch) % 0xfee0), fill=(255, 255), font=font)
+                           ch, fill=(255, 255), font=font)
 
         # 添加csv数据
         self.csv.append((ord(ch), self.x, self.y, width, height,
