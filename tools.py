@@ -10,7 +10,8 @@ class FontGlyph:
         self.project = project
         self.langlist = langlist
         self.totalwidth = totalwidth
-        self.rest = 2   # 松弛间隔，防止行之间重叠
+        self.rest_y = 2   # 松弛间隔，防止行之间重叠
+        self.rest_x = 2   # 横向间隔
         # 根据project读取对应路径下的base,获取字体列表和基本信息
         with open(f"info/{self.project}/base.json", encoding="utf-8") as file:
             self.baseinfo = dict(json.loads(file.read()))
@@ -49,9 +50,9 @@ class FontGlyph:
         for lang in self.langlist:
             charcount = len(self.charset[lang]) # 字符数
             char_perline = self.totalwidth // (
-                self.fontinfo[lang][font].get("extra_x", 0) + self.fontsize[lang][0]
+                self.fontinfo[lang][font].get("extra_x", 0) + self.fontsize[lang][0] + self.rest_x
             )
-            height += (self.fontsize[lang][1] + self.rest) * (charcount // char_perline + 1)
+            height += (self.fontsize[lang][1] + self.rest_y) * (charcount // char_perline + 1)
         return height
 
     def check(self, ch) -> str:
@@ -79,14 +80,15 @@ class FontGlyph:
     def addfont(self, ch, fallback=False) -> None:
         # 先获取基本信息
         if fallback:
-            cfg = self.fallbackcfg
+            #cfg = self.fallbackcfg
             font = self.fallbackfont
         # elif ord(ch) > 0xfee0:
         #     cfg = self.encfg
         #     font = self.enfont
         else:
-            cfg = self.cfg
             font = self.font
+        
+        cfg = self.cfg
         start_x = cfg.get("start_x", 0)
         start_y = cfg.get("start_y", 0)
         width = cfg.get("extra_x", 0) + self.width
@@ -104,7 +106,7 @@ class FontGlyph:
         # 检查是否会换行
         if self.x + width > self.totalwidth:
             self.x = 0
-            self.y += self.height + self.rest
+            self.y += self.height + self.rest_y
         
         # 开始绘制
         self.drawtool.text((self.x + start_x, self.y + start_y),
@@ -115,7 +117,7 @@ class FontGlyph:
                          0, 0, width, height))
 
         # 移动画笔，准备下一次绘制
-        self.x += width
+        self.x += width + self.rest_x
    
     # 主任务：生成字图
     def task(self) -> None:
@@ -163,7 +165,7 @@ class FontGlyph:
                         continue
                 # 完毕后调整坐标位
                 self.x = 0
-                self.y += self.height + self.rest   # 此处和之前算height的+rest都是为了避免重叠打的补丁
+                self.y += self.height + self.rest_y   # 此处和之前算height的+rest都是为了避免重叠打的补丁
                 # 处理透明度
                 pixel = self.glyph.load()
                 threshold = max(self.cfg.get("threshold", 0), 0)
