@@ -1,5 +1,5 @@
 # 字图配置生成主程序 - 0616重置版
-import csv, json
+import csv, json, os
 from PIL import Image, ImageFont, ImageDraw
 from termcolor import colored
 
@@ -77,7 +77,7 @@ class FontGlyph:
         else:
             return 'nope'
     
-    def addfont(self, ch, fallback=False) -> None:
+    def addfont(self, ch, fontname, fallback=False) -> None:
         # 先获取基本信息
         if fallback:
             #cfg = self.fallbackcfg
@@ -111,6 +111,18 @@ class FontGlyph:
         # 开始绘制
         self.drawtool.text((self.x + start_x, self.y + start_y),
                            ch, fill=(255, 255), font=font)
+        # test
+        testglyph = Image.new("LA", (width, height), 0)
+        ImageDraw.Draw(testglyph).text((start_x, start_y), ch, fill=(0, 255), font=font)
+        pixel = testglyph.load()
+        threshold = max(cfg.get("threshold", 0), 0)
+        for x in range(width):
+            for y in range(height):
+                pixel[x, y] = (pixel[x, y][0], 255 * int(pixel[x, y][1] > threshold))
+        testglyph = testglyph.convert("RGBA")
+        os.system(f"mkdir -p test/{fontname}/")
+        testglyph.save(f"test/{fontname}/uni{format(ord(ch), '04x')}.png")
+        ###
 
         # 添加csv数据
         self.csv.append((ord(ch), self.x, self.y, width, height,
@@ -156,10 +168,10 @@ class FontGlyph:
                     # 检查字符是否可用
                     status = self.check(ch) # 返回值有 yep, nope, fallback
                     if status == 'yep':
-                        self.addfont(ch)    # addfont有csv的添加
+                        self.addfont(ch, fontname=font)    # addfont有csv的添加
                     elif status == 'fallback':
                         print(colored(f"  ! 使用备用字体: {ch}", "magenta"))
-                        self.addfont(ch, fallback=True)
+                        self.addfont(ch, fallback=True, fontname=font)
                     elif status == 'nope':
                         if ch != '\n':
                             print(colored(f"  ! 无法绘制: {ch}", "red"))
@@ -174,6 +186,7 @@ class FontGlyph:
                     for y in range(self.prev_y, self.y):
                         pixel[x, y] = (pixel[x, y][0], 255 * int(pixel[x, y][1] > threshold))
             # 全部结束后，保存图片和csv到文件
+            os.system(f"mkdir -p dist/{self.project}/{self.langlist[-1]}")
             self.glyph.save(f"dist/{self.project}/{self.langlist[-1]}/{font}.png")
             with open(f"dist/{self.project}/{self.langlist[-1]}/{font}.csv", "w", encoding="utf-8", newline='') as file:
                 self.writer = csv.writer(file, delimiter=';')
