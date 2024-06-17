@@ -112,16 +112,16 @@ class FontGlyph:
         self.drawtool.text((self.x + start_x, self.y + start_y),
                            ch, fill=(255, 255), font=font)
         # test
-        testglyph = Image.new("LA", (width, height), 0)
-        ImageDraw.Draw(testglyph).text((start_x, start_y), ch, fill=(0, 255), font=font)
-        pixel = testglyph.load()
-        threshold = max(cfg.get("threshold", 0), 0)
-        for x in range(width):
-            for y in range(height):
-                pixel[x, y] = (pixel[x, y][0], 255 * int(pixel[x, y][1] > threshold))
-        testglyph = testglyph.convert("RGBA")
-        os.system(f"mkdir -p test/{fontname}/")
-        testglyph.save(f"test/{fontname}/uni{format(ord(ch), '04x')}.png")
+        # testglyph = Image.new("LA", (width, height), 0)
+        # ImageDraw.Draw(testglyph).text((start_x, start_y), ch, fill=(0, 255), font=font)
+        # pixel = testglyph.load()
+        # threshold = max(cfg.get("threshold", 0), 0)
+        # for x in range(width):
+        #     for y in range(height):
+        #         pixel[x, y] = (pixel[x, y][0], 255 * int(pixel[x, y][1] > threshold))
+        # testglyph = testglyph.convert("RGBA")
+        # os.system(f"mkdir -p test/{fontname}/")
+        # testglyph.save(f"test/{fontname}/uni{format(ord(ch), '04x')}.png")
         ###
 
         # 添加csv数据

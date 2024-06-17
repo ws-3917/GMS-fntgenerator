@@ -100,9 +100,9 @@
         "extra_y": 0
     },
     "Papyrus": {
-        "fontfile": "TANUKIMAGIC-2.TTF",
+        "fontfile": "fzkt_GBK.ttf",
         "size": 18,
-        "threshold": 85,
+        "threshold": 120,
         "extra_y": 1,
         "start_y": 2
     }
