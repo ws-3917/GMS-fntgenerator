@@ -141,9 +141,10 @@ class FontGlyph:
                 if lang == "en_US":
                     self.encfg = self.cfg
                     self.enfont = self.font
-                self.fallbackcfg = self.fallbackinfo.get(self.cfg.get("fallback"))
+                self.fallbackcfg = self.fallbackinfo.get(lang)
                 if self.fallbackcfg:
-                    self.fallbackfont = ImageFont.truetype(f"fonts/{lang}/" + self.fallbackcfg["fontfile"], self.fallbackcfg["size"])
+                    self.fallbackfont = ImageFont.truetype(f"fonts/{lang}/" + self.fallbackcfg["fontfile"], 
+                                                           self.cfg.get("fallbacksize", self.fallbackcfg["size"]))
                     self.fallbackfail = Image.new("1", (self.width, self.height), 0)
                     ImageDraw.Draw(self.fallbackfail).text((0, 0), "𘏚", fill=1, font=self.fallbackfont)
                 

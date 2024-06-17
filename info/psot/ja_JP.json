@@ -11,71 +11,22 @@
         "fontfile": "fusion-pixel-8px-ja.ttf",
         "threshold": 80,
         "size": 8,
+        "fallbacksize": 8,
         "start_y": -1
     },
     "DeterminationMono": {
         "fontfile": "JF-Dot-Shinonome12.ttf",
-        "fallback": "unifont_jp",
         "size": 12,
         "extra_x": 3,
         "extra_y": -1,
-        "start_y": -1,
-        "special": {
-            "。": {
-                "start_y": 2
-            },
-            "，": {
-                "start_y": 2
-            },
-            "“": {
-                "start_x": -4,
-                "extra_x": -5
-            },
-            "”": {
-                "start_x": -2,
-                "extra_x": -5
-            },
-            "‘": {
-                "start_x": -7,
-                "extra_x": -9
-            },
-            "’": {
-                "start_x": -2,
-                "extra_x": -9
-            }
-        }
+        "start_y": -1
     },
     "DeterminationSans": {
         "fontfile": "JF-Dot-Shinonome12.ttf",
-        "fallback": "unifont_jp",
         "size": 12,
         "extra_x": 2,
         "extra_y": -1,
-        "start_y": -1,
-        "special": {
-            "。": {
-                "start_y": 2
-            },
-            "，": {
-                "start_y": 2
-            },
-            "“": {
-                "start_x": -4,
-                "extra_x": -5
-            },
-            "”": {
-                "start_x": -2,
-                "extra_x": -5
-            },
-            "‘": {
-                "start_x": -7,
-                "extra_x": -9
-            },
-            "’": {
-                "start_x": -2,
-                "extra_x": -9
-            }
-        }
+        "start_y": -1
     },
     "DiaryOfAn8BitMage": {
         "fontfile": "fusion-pixel-8px-ja.ttf",
@@ -85,7 +36,6 @@
     },
     "DotumChe": {
         "fontfile": "FOT-UDKAKUGOC80PRO-M.OTF",
-        "fallback": "unifont_jp",
         "size": 16,
         "extra_x": 4,
         "start_y": 2,

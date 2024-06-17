@@ -1,12 +1,30 @@
 {
-    "unifont": {
+    "en_US": {
         "fontfile": "unifont.otf",
         "size": 16,
         "start_y": 0,
         "start_x": 0
     },
-    "unifont_jp": {
+    "zh_CN": {
+        "fontfile": "unifont.otf",
+        "size": 16,
+        "start_y": 0,
+        "start_x": 0
+    },
+    "zh_TW": {
         "fontfile": "unifont_jp.otf",
+        "size": 16,
+        "start_y": 0,
+        "start_x": 0
+    },
+    "ja_JP": {
+        "fontfile": "unifont_jp.otf",
+        "size": 16,
+        "start_y": 0,
+        "start_x": 0
+    },
+    "symbols": {
+        "fontfile": "unifont.otf",
         "size": 16,
         "start_y": 0,
         "start_x": 0

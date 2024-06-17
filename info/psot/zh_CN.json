@@ -11,73 +11,24 @@
         "fontfile": "fusion-pixel-8px-zh_hans.ttf",
         "threshold": 80,
         "size": 8,
+        "fallbacksize": 8,
         "start_y": -1
     },
     "DeterminationMono": {
         "fontfile": "fzxs12-Pixel.ttf",
-        "fallback": "unifont",
         "threshold": 128,
         "size": 12,
         "start_y": -1,
         "extra_x": 3,
-        "extra_y": -1,
-        "special": {
-            "。": {
-                "start_y": 2
-            },
-            "，": {
-                "start_y": 2
-            },
-            "“": {
-                "start_x": -4,
-                "extra_x": -5
-            },
-            "”": {
-                "start_x": -2,
-                "extra_x": -5
-            },
-            "‘": {
-                "start_x": -7,
-                "extra_x": -9
-            },
-            "’": {
-                "start_x": -2,
-                "extra_x": -9
-            }
-        }
+        "extra_y": -1
     },
     "DeterminationSans": {
         "fontfile": "fzxs12-Pixel.ttf",
-        "fallback": "unifont",
         "size": 12,
         "threshold": 128,
         "extra_x": 2,
         "start_y": -1,
-        "extra_y": -1,
-        "special": {
-            "。": {
-                "start_y": 2
-            },
-            "，": {
-                "start_y": 2
-            },
-            "“": {
-                "start_x": -4,
-                "extra_x": -5
-            },
-            "”": {
-                "start_x": -2,
-                "extra_x": -5
-            },
-            "‘": {
-                "start_x": -7,
-                "extra_x": -9
-            },
-            "’": {
-                "start_x": -2,
-                "extra_x": -9
-            }
-        }
+        "extra_y": -1
     },
     "DiaryOfAn8BitMage": {
         "fontfile": "fusion-pixel-8px-zh_hans.ttf",
@@ -87,7 +38,6 @@
     },
     "DotumChe": {
         "fontfile": "fzxs14.ttf",
-        "fallback": "unifont",
         "size": 14,
         "extra_x": 6,
         "start_y": 2,
