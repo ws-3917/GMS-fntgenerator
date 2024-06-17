@@ -2,8 +2,8 @@
     "ComicSans": {
         "fontfile": "HAPPYRUIKAKYOHKAN-07.TTF",
         "size": 14,
-        "extra_y": -4,
-        "start_y": -2,
+        "extra_y": -1,
+        "start_y": -1,
         "extra_x": 2,
         "threshold": 145
     },
@@ -103,7 +103,7 @@
         "fontfile": "fzkt_GBK.ttf",
         "size": 18,
         "threshold": 120,
-        "extra_y": 1,
+        "extra_y": 2,
         "start_y": 2
     }
 }
