@@ -209,7 +209,7 @@
     "DotumChe": {
         "fontfile": "dotumche-px.ttf",
         "size": 13,
-        "start_y": 2,
+        "start_y": 1,
         "extra_x": 3,
         "extra_y": 2
     },

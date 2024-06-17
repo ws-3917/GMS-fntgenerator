@@ -40,7 +40,7 @@
         "fontfile": "WQY_BS_14px.ttf",
         "size": 15,
         "extra_x": 6,
-        "start_y": 3,
+        "start_y": 2,
         "extra_y": 2,
         "threshold": 120
     },
