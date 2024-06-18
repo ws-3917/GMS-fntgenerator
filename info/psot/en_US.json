@@ -1,7 +1,7 @@
 {
     "ComicSans": {
         "fontfile": "comicsans-px.ttf",
-        "size": 16,
+        "size": 32,
         "extra_x": -1,
         "extra_y": -2,
         "start_y": -2,
