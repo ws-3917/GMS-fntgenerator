@@ -1,7 +1,8 @@
 {
     "ComicSans": {
         "fontfile": "HAPPYRUIKAKYOHKAN-07.TTF",
-        "size": 14,
+        "fallbacksize": 32,
+        "size": 28,
         "extra_y": 0,
         "start_y": 0,
         "extra_x": 1,
@@ -51,7 +52,8 @@
     },
     "Papyrus": {
         "fontfile": "TANUKIMAGIC-2.TTF",
-        "size": 17,
+        "fallbacksize": 32,
+        "size": 34,
         "threshold": 110,
         "extra_x": 1,
         "extra_y": 0,

@@ -2,6 +2,7 @@
     "ComicSans": {
         "fontfile": "fzse_GBK.ttf",
         "size": 28,
+        "fallbacksize": 32,
         "extra_y": -4,
         "start_y": -2,
         "extra_x": 2,
@@ -53,7 +54,8 @@
     },
     "Papyrus": {
         "fontfile": "fzkt_GBK.ttf",
-        "size": 18,
+        "size": 36,
+        "fallbacksize": 32,
         "threshold": 155,
         "extra_y": -2,
         "start_y": -2

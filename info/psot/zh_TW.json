@@ -1,7 +1,8 @@
 {
     "ComicSans": {
         "fontfile": "HKFY_W7_sans.ttf",
-        "size": 14,
+        "size": 28,
+        "fallbacksize": 32,
         "extra_y": -2,
         "start_y": -2,
         "extra_x": 2,
@@ -53,7 +54,8 @@
     },
     "Papyrus": {
         "fontfile": "QSSXT_papy.ttf",
-        "size": 18,
+        "size": 36,
+        "fallbacksize": 32,
         "threshold": 110,
         "extra_y": -2,
         "start_y": -2

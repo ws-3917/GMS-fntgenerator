@@ -3,7 +3,7 @@
         "size": 32,
         "shift_x": 0,
         "shift_y": 0,
-        "height": 15
+        "height": 28
     },
     "CryptOfTomorrow": {
         "size": 8,
@@ -42,9 +42,9 @@
         "height": 18
     },
     "Papyrus": {
-        "size": 16,
+        "size": 32,
         "shift_x": 0,
         "shift_y": 0,
-        "height": 16
+        "height": 32
     }
 }
