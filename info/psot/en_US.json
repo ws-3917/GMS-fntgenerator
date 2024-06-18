@@ -5,8 +5,8 @@
         "fallbacksize": 32,
         "extra_x": -1,
         "start_x": 1,
-        "extra_y": -2,
-        "start_y": -2,
+        "extra_y": -3,
+        "start_y": -3,
         "special": {
             "i": {
                 "start_x": 1,
@@ -244,8 +244,8 @@
         "fontfile": "papyrus-px_alt.ttf",
         "fallbacksize": 32,
         "size": 32,
-        "extra_y": 2,
-        "start_y": 2,
+        "extra_y": 4,
+        "start_y": 4,
         "special": {
             "I": {
                 "start_y": -1,
