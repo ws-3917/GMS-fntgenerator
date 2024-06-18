@@ -10,8 +10,8 @@ class FontGlyph:
         self.project = project
         self.langlist = langlist
         self.totalwidth = totalwidth
-        self.rest_y = 2   # 松弛间隔，防止行之间重叠
-        self.rest_x = 2   # 横向间隔
+        self.rest_y = 4   # 松弛间隔，防止行之间重叠
+        self.rest_x = 4   # 横向间隔
         # 根据project读取对应路径下的base,获取字体列表和基本信息
         with open(f"info/{self.project}/base.json", encoding="utf-8") as file:
             self.baseinfo = dict(json.loads(file.read()))
