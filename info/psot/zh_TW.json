@@ -54,7 +54,7 @@
     },
     "Papyrus": {
         "fontfile": "QSSXT_papy.ttf",
-        "size": 36,
+        "size": 34,
         "fallbacksize": 32,
         "threshold": 110,
         "extra_y": -2,
